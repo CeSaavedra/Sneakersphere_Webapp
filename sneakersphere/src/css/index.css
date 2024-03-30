@@ -1,0 +1,59 @@
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Navbar Header Elements */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #0d0d0d;
+    height:15vh;
+}
+
+#search-bar{
+    position: absolute;
+    flex-grow:1;
+    top: 50%;
+    transform: translateY(-50%);
+    height:40%;
+    width:40%;
+}
+
+.navbar-brand img{
+    height: 550%;
+    width:auto;
+}
+
+#brand-title:hover{
+    text-shadow: 3px 3px 3px #424242;
+}
+
+#brand-title{
+
+    display: flex;
+    font-size: 500%;
+    font-family: 'Bebas Neue';
+    font-stretch: ultra-expanded;
+    align-items: center;
+    height: 600%;
+    color: #cfcfcf;
+
+}
+
+.navbar a:hover {
+    text-decoration:none;
+}
+
+/* Elements of the Center Column */
+.text-left {
+    height: 100vh;
+    background-color: #cfcfcf;
+}
+
+/* Elements of the Side Columns */
+.sidenav {
+    height: 100vh;
+    background-color: #141414;
+}
