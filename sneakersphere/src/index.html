@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-    <title>SneakerSphere</title>
+	<!-- Displayed on Browser Tab -->
+	<title>SneakerSphere</title>
+	<link rel="icon" href="assets\images\ss_logo.PNG">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Plugs in Custom Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -15,11 +19,15 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
 
-	<!-- Defines HTML Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
-  </head>
+	<!-- Icon visible on browser tab -->
+	<link rel="icon" href="assets\images\ss_logo.PNG">
+
+	<!-- Defines Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
 <body>
 
 	<!-- Defines Navbar -->
@@ -27,47 +35,64 @@
 		<!-- Allows container fluidity (Spans full width) -->
 		<div class="container-fluid">
 			<!-- Navbar Header Elements -->
-			<div class = "navbar-header">
-				<a class = "navbar-brand" href = "index.html">
-					<img class = "navbar-brand" id="logo" src = "assets\images\ss_logo.PNG">
-					<span id="brand-title">SneakerSphere</span>
-				</a>
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">
+					<img class="navbar-brand" id="logo" src="assets\images\ss_logo.PNG"></a>
 			</div>
 
-			<form class="navbar-form navbar-left" role="search">
-				
-				<div class="form-group">
-				  <input type="text" id = "search-bar" class="form-control" placeholder="Explore our Sneakers">
-				</div>
-
-				<!--
-				<button type="image" class="btn btn-default">
-					<img src = "assets\images\search_btn.jpg"> 
-				</button>
-				-->
-
-			</form>
-
-  		</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<span>
+							<a href="index.html" class="navbar-brand mt-1" id="brand-title">
+								SneakerSphere
+							</a>
+						</span>
+					</li>
+					<li>
+						<form class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input type="text" id="search-bar" class="form-control"
+									placeholder="Explore our Sneakers">
+							</div>
+						</form>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a id="login-btn" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+			</div>
+		</div>
 	</nav>
 
 	<!-- Contains all content under Navbar -->
-	<div class="container-fluid text-center">    
-  		<div class="row content">
+	<div class="container-fluid text-center">
+		<div class="row content">
 
 			<!-- Left Column Container -->
-    		<div class="col-sm-2 sidenav">
-    		</div>
+			<div class="col-sm-2 sidenav">
+			</div>
 
 			<!-- Center Column Container -->
-    		<div class="col-sm-8 text-left"> 
-    		</div>
+			<div class="col-sm-8 text-left">
+				<div class="row">
+					<div id="listing-box" class="col">
+						<div class="row">
+							<div id="listing" class="col-sm-8 text-center">
+								<div class="row">
+									<div id="listing-imagebox" class="col">
+										<img src="assets\images\listing_test2.jpg">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<!-- Right Column Container -->
 			<div class="col-sm-2 sidenav">
 			</div>
-
-			
 
 		</div>
 	</div>
