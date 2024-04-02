@@ -19,8 +19,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/index.css">
 
-	<!-- Icon visible on browser tab -->
-	<link rel="icon" href="assets\images\ss_logo.PNG">
 
 	<!-- Defines Libraries -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -74,14 +72,36 @@
 			</div>
 
 			<!-- Center Column Container -->
-			<div class="col-sm-8 text-left">
+			<div id="content-col" class="col-sm-8 text-left">
 				<div class="row">
+					<!-- Contains area of listing -->
 					<div id="listing-box" class="col">
 						<div class="row">
+							<!-- Contains listing -->
 							<div id="listing" class="col-sm-8 text-center">
 								<div class="row">
+
+									<!--Contains price box-->
+									<div id="listing-pricebox"><p id="listing-price">$1000</p></div>
+									
+									<!-- Contains image box-->
 									<div id="listing-imagebox" class="col">
-										<img src="assets\images\listing_test2.jpg">
+										<img src="assets\images\listing_test1.jpg">
+									</div>
+
+									<!-- Contains listing info box-->
+									<div id="listing-info" class="col">
+										<p id="listing-title">Jordan 11 RetroDMP Gratitude (2023)</p>
+										<p id="listing-name" class="text-left"><a href="index.html">Username Here</a></p>
+										<p id="listing-sh-desc" class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, q</p>
+										
+										<!-- Listing expand operation -->
+										<div id="listing-expand">
+											<button id="expand-btn"><span class="glyphicon glyphicon-collapse-down"></span>
+											</button>
+										</div>
+
+										<a id="listing-like" href="#"><span class="glyphicon glyphicon-heart"></span></a>
 									</div>
 								</div>
 							</div>

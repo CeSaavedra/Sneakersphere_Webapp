@@ -5,7 +5,7 @@
     font-style: normal;
 }
 
-/* ----- Navbar Header Elements ----- */
+/* ---------- Navbar Header Elements ---------- */
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
@@ -34,68 +34,148 @@
     text-shadow: 3px 3px 3px #424242;
 }
 
-#login-btn{
+#login-btn{ /* Login Button */
     font-size:2em;
     transform: translateY(40%);
     color:#cfcfcf;
+    background-color: transparent;
 }
 
 #login-btn:hover {
     text-shadow: 3px 3px 3px #424242;
 }
-#login-btn {
+
+/* ---------- Elements of the Center Column ---------- */
+#content-col {
+    min-height: 100vh;
+    background-color: #434343;
+}
+
+#listing-box{    /* Contains listing */
     background-color: transparent;
+    position: relative;
+    min-height:100vh;
 }
 
-/* ----- Elements of the Center Column ----- */
-.text-left {
-    height: 100vh;
-    background-color: #dfdfdf;
-}
-
-/* Listing Elements */
-
-#listing-box{    
-    background-color: transparent;
-    height:60em;
-    
-}
-
-#listing{
-    position:relative;
+#listing{   /* Listing container */
+    position:absolute;
     left:16%;
-    top:5em;
-    background-color: #cfcfcf;
+    background-color: #222222;
     border-radius:5%;
-    height:50em;
 
-    padding-bottom:10%;
-    padding-top:20%;
+    top:10%;
+    height:80%;
+
+    padding-bottom:15%;
+    padding-top:15;
 }
-
-#listing-imagebox{
+#listing-imagebox{ /* Contains top half of listing */
     position: absolute;
+    background-color:black;
+    border-top-left-radius:5%;
+    border-top-right-radius:5%;
     top: 0;
     left: 0;
     right: 0;
     height: 50%; 
 }
-#listing-imagebox img{ 
+#listing-imagebox img{  /* Images within listing-box */
     width:100%;
     height:100%;    
-    object-fit:fill;
+    max-height:100%;
+    max-width:100%;
+    object-fit:contain;
     border-top-left-radius:5%;
     border-top-right-radius:5%;
 }
+#listing-info{  /* Contains bottom half of listing */
+    position: absolute;
+    background-color:transparent;
+    border-bottom-left-radius:5%;
+    border-bottom-right-radius:5%;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 50%; 
+}
+#listing-pricebox{  /* Container at top left of listing */
+    position:absolute;
+    background-color:#2f2f2f;
+    border-top-left-radius:5%;
+    border-bottom-right-radius:5%;
+    z-index:1;
+    top:0;
+    left:0;
+    height:7%;
+    width:15%;
+}
+#listing-price{ /* Price contained within pricebox */
+    color:#84f053;
+    font-size:300%;
+    font-family: 'Bebas Neue';
+    font-stretch: ultra-expanded;
+}
+#listing-title{ /* Contains title of sneaker */
+    padding-top:2.5%;
+    font-size: 300%;
+    font-family: 'Bebas Neue';
+    color:#ffb608;
+}
+#listing-name{ /* Username of listing */
+    padding-left:5%;
+    font-size: 200%;
+    font-family: 'Bebas Neue';
+    color:#126fff;
+}
+#listing-name a:visited{
+    color:#126fff;
+}
+#listing-info a:hover{ /* Applies to all links in listing-info */
+    text-shadow: 3px 3px 3px black;
+}
+#listing-sh-desc{ /* Short description of listing */
+    padding-left:5%;
+    font-size: 200%;
+    color:white;
+    font-family: 'Bebas Neue';
+}
+#listing-like{ /* Like button of listing */
+    position:absolute;
+    color:#de3131;
+    font-size:300%;
+    bottom:5%;
+    right:5%;
+}
+#listing-like:hover{
+    text-shadow: 3px 3px 3px black;
+}
+/* Unfinished code for expanding listing */
+#listing-expand{
+    position:absolute;
+    color:#126fff;
+    font-size:300%;
+    top:0;
+    width:100%;
+    height: 100%; 
+    border-bottom-left-radius:5%;
+    border-bottom-right-radius:5%;
+}
+#expand-btn{
+    position:absolute;
+    background-color: transparent;
+    border:none;
+    bottom:5%;
+    left:5%;
+}
 
-/* ----- Elements of the Side Columns ----- */
+/* --------- Elements of the Side Columns ---------- */
 .sidenav {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #141414;
 }
 
 
-/* ----- Responsive Adaptations for Resolutions ----- */
+/* ---------- Responsive Adaptations for Resolutions ---------- */
 
 /* Adapt to Minimal Screens */
 @media screen and (max-width: 575px) { 
