@@ -2,8 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-Format: [Keep a Changelog](https://stackoverflow.com/questions/18182081/git-and-changelog-guideline),
-Adheres to: [Semantic Versioning](https://www.freecodecamp.org/news/a-beginners-guide-to-git-what-is-a-changelog-and-how-to-generate-it/).
+Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased v1.0] - 2024-03-29
 
