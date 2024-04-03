@@ -45,6 +45,12 @@
     text-shadow: 3px 3px 3px #424242;
 }
 
+/* --------- Elements of the Side Columns ---------- */
+.sidenav {
+    min-height: 100vh;
+    background-color: #141414;
+}
+
 /* ---------- Elements of the Center Column ---------- */
 #content-col {
     min-height: 100vh;
@@ -66,8 +72,9 @@
     top:10%;
     height:80%;
 
-    padding-bottom:15%;
-    padding-top:15;
+    margin-bottom:auto;
+    margin-top:auto;
+    
 }
 #listing-imagebox{ /* Contains top half of listing */
     position: absolute;
@@ -99,13 +106,11 @@
     height: 50%; 
 }
 #listing-pricebox{  /* Container at top left of listing */
-    position:absolute;
+    position:relative;
     background-color:#2f2f2f;
     border-top-left-radius:5%;
     border-bottom-right-radius:5%;
     z-index:1;
-    top:0;
-    left:0;
     height:7%;
     width:15%;
 }
@@ -149,6 +154,7 @@
 #listing-like:hover{
     text-shadow: 3px 3px 3px black;
 }
+
 /* Unfinished code for expanding listing */
 #listing-expand{
     position:absolute;
@@ -167,13 +173,6 @@
     bottom:5%;
     left:5%;
 }
-
-/* --------- Elements of the Side Columns ---------- */
-.sidenav {
-    min-height: 100vh;
-    background-color: #141414;
-}
-
 
 /* ---------- Responsive Adaptations for Resolutions ---------- */
 
@@ -204,7 +203,6 @@
     #search-bar{
         width:100%;
     }
-
     #brand-title{
         font-size: 400%;
         font-stretch: ultra-condensed;
@@ -215,5 +213,24 @@
         width:auto;
         transform: translateY(-8%);
     }
-
+    #listing-sh-desc{ /* Short description of listing */
+        font-size: 150%;
+    }
+    #listing-title{ /* Contains title of sneaker */
+        font-size: 225%;
+    }
+    #listing-name{ /* Username of listing */
+        font-size: 150%;
+    }
+    #listing-price{ /* Price contained within pricebox */
+        font-size:250%;
+        font-stretch: ultra-condensed;
+    }
+    #listing-pricebox{  /* Container at top left of listing */
+        height:7%;
+        width:25%;
+    }
+    #listing{   /* Listing container */
+        height:70%;
+    }
 }
