@@ -76,7 +76,7 @@
     font-size:150%;
     color:white;
     width:50%;
-    margin-top:5%;
+    margin-top:2.5%;
 }
 #email input{
     position:relative;
@@ -91,9 +91,9 @@
     font-size:150%;
     color:white;
     width:50%;
-    margin-top:5%;
+    margin-top:2.5%;
 }
-#pwd input{ 
+#pwd input{
     position:relative;
     width:60%;
     margin-left:auto;
@@ -101,6 +101,22 @@
     font-size:150%;
     margin-top:2.5%;
 }
+#username input{ 
+    position:relative;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:150%;
+    margin-top:2.5%;
+}
+#username label{ 
+    position:relative;
+    font-size:150%;
+    color:white;
+    width:50%;
+    margin-top:2.5%;
+}
+
 #submit{
     position:relative;
     width:25%;
@@ -117,7 +133,7 @@
     font-size:125%;
     color:#4096ef;
     width:50%;
-    margin-top:10%;
+    margin-top:5%;
 }
 /* ---------- Responsive Adaptations for Resolutions ---------- */
 
