@@ -1,0 +1,157 @@
+/* Implements Imported Font */
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ---------- Navbar Header Elements ---------- */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #0d0d0d;
+    height: 10em;
+}
+.navbar-brand img{ /* SneakerSphere Logo */
+    height: 750%;
+    width:auto;
+    transform: translateY(-15%);
+}
+#search-bar{
+    transform: translateY(40%);
+    width:225%;
+    height: 4em;
+}
+#brand-title{   /* SneakerSphere Title */
+    font-size: 600%;
+    font-family: 'Bebas Neue';
+    font-stretch: ultra-expanded;
+    color: #cfcfcf;
+    padding-right: 1em;
+    transform: translateY(70%);
+}
+#brand-title:hover{
+    text-shadow: 3px 3px 3px #424242;
+}
+#lock-icn{ /* Login Button */
+    font-size:2em;
+    padding-right:1em;
+    transform: translateY(170%);
+    color:#cfcfcf;
+    background-color: transparent;
+}
+
+/* --------- Elements of the Side Columns ---------- */
+.sidenav {
+    min-height: 100vh;
+    background-color: #141414;
+}
+
+/* ---------- Elements of the Center Column ---------- */
+#content-col {
+    min-height: 100vh;
+    background-color: #434343;
+    position:relative;
+}
+#register-box{   /* Contains login container */
+    position:absolute;
+    left:16%;
+    background-color: #2f2f2f;
+    border-radius:5%;
+
+    top:10%;
+    height:80%;
+
+    padding-bottom:15%;
+}
+#register-title{
+    position:relative;
+    font-family: 'Bebas Neue';
+    font-size:400%;
+    color:#a3a3a3;
+    margin-top:5%;
+}
+#email label{
+    position:relative;
+    font-size:150%;
+    color:white;
+    width:50%;
+    margin-top:2.5%;
+}
+#email input{
+    position:relative;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:150%;
+    margin-top:2.5%;
+}
+#pwd label{
+    position:relative;
+    font-size:150%;
+    color:white;
+    width:50%;
+    margin-top:2.5%;
+}
+#pwd input{
+    position:relative;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:150%;
+    margin-top:2.5%;
+}
+#username input{ 
+    position:relative;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:150%;
+    margin-top:2.5%;
+}
+#username label{ 
+    position:relative;
+    font-size:150%;
+    color:white;
+    width:50%;
+    margin-top:2.5%;
+}
+
+#submit{
+    position:relative;
+    width:25%;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:150%;
+    margin-top:5%;
+}
+#login-link{
+    position:relative;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:125%;
+    color:#4096ef;
+    width:50%;
+    margin-top:5%;
+}
+/* ---------- Responsive Adaptations for Resolutions ---------- */
+
+/* Adapt to Tablets */
+@media screen and (min-width: 768px) and (max-width: 991px){ 
+    #search-bar{
+        width:100%;
+    }
+
+    #brand-title{
+        font-size: 400%;
+        font-stretch: ultra-condensed;
+        padding-right: 0%;
+    }
+    .navbar-brand img{ /* SneakerSphere Logo */
+        height: 550%;
+        width:auto;
+        transform: translateY(-8%);
+    }
+
+}

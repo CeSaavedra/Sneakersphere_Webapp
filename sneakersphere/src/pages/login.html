@@ -73,29 +73,56 @@
 
 			<!-- Center Column Container -->
 			<div id="content-col" class="col-sm-8 text-left">
-                <div class="row">
-					<!-- Contains area of listing -->
+				<div class="row">
 					<div id="login-box" class="col-sm-8 text-center">
-                        <!-- Login Form -->
-                        <!-- Notes: Backend Focus on action in the form tag -->
-                        <form action="/action_page.php">
-                            <p id="login-title">Log in to SneakerSphere</p>
-                            <!-- Email Input -->
-                            <div id="username" class="form-group">
-                              <label for="login-email">Username</label>
-                              <input type="email" class="form-control" id="email">
-                            </div>
-                            <!-- Password Input -->
-                            <div id="pwd" class="form-group">
-                              <label for="login-pwd">Password</label>
-                              <input type="password" class="form-control" id="pwd">
-                            </div>
-                            <!-- Login button and register link -->
-                            <button id="submit" type="submit" class="btn btn-default">Login</button>
-                            <a href="register.html" id="register-link">Don't have an account? Register Here</a>
-                        </form> 
-                    </div>
-                </div>
+						<div id="prompt-container" class="col">
+							<p id="prompt-title">Are you a Buyer or Seller</p>
+							<button id="buyer-btn" class="btn">Buyer</button>
+							<button id="seller-btn"class="btn">Seller</button>
+						</div>
+						<div id="buyer-container" class="col" style="display:none;">
+							<!-- Buyer Login Form -->
+							<form action="/action_page.php">
+								<a id="return-btn" href="/sneakersphere/src/pages/login.html"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a>
+								<p id="login-title">SneakerSphere <span style="color:white;">Buyer</span> Login</p>
+								<!-- Email Input -->
+								<div id="username" class="form-group">
+								  <label for="login-email">Email</label>
+								  <input type="buyer-email" class="form-control" id="email">
+								</div>
+								<!-- Password Input -->
+								<div id="pwd" class="form-group">
+								  <label for="login-pwd">Password</label>
+								  <input type="buyer-password" class="form-control" id="pwd">
+								</div>
+								<!-- Login button and register link -->
+								<button id="buyer-submit" type="submit" class="btn btn-default">Login</button>
+								<a href="buyer-register.html" id="register-link">Don't have an account? Register Here</a>
+							</form> 						
+						</div>
+						<div id="seller-container" class="col" style="display:none;">
+							<!-- Seller Login Form -->
+							<form action="/action_page.php">
+								<a id="return-btn" href="/sneakersphere/src/pages/login.html"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a>
+								<p id="login-title">SneakerSphere <span style="color:white;">Seller</span> Login</p>
+								<!-- Email Input -->
+								<div id="username" class="form-group">
+								  <label for="login-email">Email</label>
+								  <input type="seller-email" class="form-control" id="email">
+								</div>
+								<!-- Password Input -->
+								<div id="pwd" class="form-group">
+								  <label for="login-pwd">Password</label>
+								  <input type="seller-password" class="form-control" id="pwd">
+								</div>
+								<!-- Login button and register link -->
+								<button id="seller-submit" type="submit" class="btn btn-default">Login</button>
+								<a href="seller-register.html" id="register-link">Don't have an account? Register Here</a>
+							</form> 							
+						</div>
+					</div>
+				</div>
+				<script src="../js/login.js"></script>
 			</div>
 
 			<!-- Right Column Container -->
