@@ -1,0 +1,98 @@
+/* Implements Imported Font */
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ---------- Navbar Header Elements ---------- */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #0d0d0d;
+    height: 10em;
+}
+.navbar-brand img{ /* SneakerSphere Logo */
+    height: 750%;
+    width:auto;
+    transform: translateY(-15%);
+}
+#search-bar{
+    transform: translateY(40%);
+    width:225%;
+    height: 4em;
+}
+#brand-title{   /* SneakerSphere Title */
+    font-size: 600%;
+    font-family: 'Bebas Neue';
+    font-stretch: ultra-expanded;
+    color: #cfcfcf;
+    padding-right: 1em;
+    transform: translateY(70%);
+}
+#brand-title:hover{
+    text-shadow: 3px 3px 3px #424242;
+}
+
+#login-btn{ /* Login Button */
+    font-size:2em;
+    transform: translateY(40%);
+    color:#cfcfcf;
+    background-color: transparent;
+}
+
+#login-btn:hover {
+    text-shadow: 3px 3px 3px #424242;
+}
+
+/* --------- Elements of the Side Columns ---------- */
+.sidenav {
+    min-height: 100vh;
+    background-color: #141414;
+}
+
+/* ---------- Elements of the Center Column ---------- */
+#content-col {
+    min-height: 100vh;
+    background-color: #434343;
+}
+
+/* ---------- Responsive Adaptations for Resolutions ---------- */
+
+/* Adapt to Minimal Screens */
+@media screen and (max-width: 575px) { 
+    #search-bar{
+        width:10px;
+    }
+    #brand-title{
+        font-size: 100%;
+        font-stretch: ultra-condensed;
+        padding-right: 0%;
+        
+    }
+    .navbar-brand img{ /* SneakerSphere Logo */
+        display:none;
+    }
+}
+
+/* Adapt to Mobile Devices */
+@media screen and (min-width: 576px) and (max-width: 768px) { 
+
+}
+
+/* Adapt to Tablets */
+@media screen and (min-width: 768px) and (max-width: 991px){ 
+    #search-bar{
+        width:100%;
+    }
+    #brand-title{
+        font-size: 400%;
+        font-stretch: ultra-condensed;
+        padding-right: 0%;
+    }
+    .navbar-brand img{ /* SneakerSphere Logo */
+        height: 550%;
+        width:auto;
+        transform: translateY(-8%);
+    }
+}
