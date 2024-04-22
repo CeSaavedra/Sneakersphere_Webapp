@@ -59,19 +59,12 @@
     left:16%;
     background-color: #2f2f2f;
     border-radius:5%;
+    border:4px solid #212121;
 
     top:10%;
     height:80%;
 
     padding-bottom:15%;
-}
-#login-box button{
-    position:relative;
-    width:25%;
-    margin-left:auto;
-    margin-right:auto;
-    font-size:150%;
-    margin-top:5%;
 }
 #prompt-title{
     position:relative;
@@ -89,14 +82,15 @@
     border-width:0.3em;
 
     color: white;
-    border-color: #a3a3a3;
+    border: 3px solid #cbcbcb;
     font-family: 'Bebas Neue';
     font-stretch: ultra-expanded;
     font-size: 200%;
-    background-color:transparent;
+    background-color:#292929;
 }
 #prompt-container button:hover{
-    border-color: white;
+    box-shadow:2px 2px 20px gray;
+    background-color:#232323;
 }
 #prompt-container button:last-child{
     margin-right:0;
@@ -161,6 +155,7 @@
     width:50%;
     margin-top:10%;
 }
+
 /* ---------- Responsive Adaptations for Resolutions ---------- */
 
 /* Adapt to Tablets */
