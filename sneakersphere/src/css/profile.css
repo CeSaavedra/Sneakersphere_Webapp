@@ -1,3 +1,95 @@
+    /* This is for the entire user profile card-------------------------- */
+  .wrapper{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1275px;
+    height: 916px;
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+  }
+  
+  /* left side of profile card --------*/
+  .wrapper .left{
+    width: 35%;
+    background: #000000;
+    padding: 30px 25px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* account name */
+  .wrapper .left h4{
+    margin-bottom: 10px;
+    margin-top: 50px;
+    font-size: 50px;
+  }
+  
+  /* account label: buyer or seller  */
+  .wrapper .left p{
+    font-size: 30px;
+    color: #7a7777;
+  }
+  /*right side of profile card ------- */
+  .wrapper .right{
+    width: 65%;
+    background: #7a7777;
+    padding: 30px 25px;
+ 
+  }
+  
+  /* Information title */
+  .wrapper .right .info h3{
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 5px solid #e0e0e0;
+      color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 50px;
+    
+  }
+  
+/* seperates the text underneath into two seperate columns */
+  .wrapper .right .info_data{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .wrapper .right .info_data .data{
+    width: 45%;
+  }
+  
+  /* for sections like "firstname and Lastname" */
+  .wrapper .right .info_data .data h4{
+    color: #000000;
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* text within sections "test" and "buyer" */
+  .wrapper .right .info_data .data p{
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+    /* Edit profile button */
+    .wrapper .right .edit_profile .edit{
+        font-size: 20px;
+        margin-top: 175px;
+        margin-left: 565px;
+        color: #0000EE;
+      }
+
+
 /* Implements Imported Font */
 .bebas-neue-regular {
     font-family: "Bebas Neue", sans-serif;
@@ -79,6 +171,8 @@
 @media screen and (min-width: 576px) and (max-width: 768px) { 
 
 }
+
+/* test stuff*/
 
 /* Adapt to Tablets */
 @media screen and (min-width: 768px) and (max-width: 991px){ 
