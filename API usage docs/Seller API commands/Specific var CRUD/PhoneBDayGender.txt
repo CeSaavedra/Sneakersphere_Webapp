@@ -1,0 +1,29 @@
+/GetSellerPhone/:id    where ":id" = sellerID
+Responds with only seller's phoneNumber in string form
+
+
+/SetSellerPhone/:id    where ":id" = sellerID
+Updates seller's phoneNumber to whatever is sent in the body of request, body formatted like:
+{
+   "phoneNumber" = "3026691789"
+}
+
+/GetSellerBDay/:id    where ":id" = sellerID
+Responds with only seller's birthday in DATE form
+
+
+/SetSellerBDay/:id    where ":id" = sellerID
+Updates seller's birthday to whatever is sent in the body of request, body formatted like:
+{
+   "birthday" = "YYYY-MM-DD"
+}
+
+/GetSellerGender/:id    where ":id" = sellerID
+Responds with only seller's gender in string form
+
+
+/SetSellerGender/:id    where ":id" = sellerID
+Updates seller's gender to whatever is sent in the body of request, body formatted like:
+{
+   "gender" = "male"
+}

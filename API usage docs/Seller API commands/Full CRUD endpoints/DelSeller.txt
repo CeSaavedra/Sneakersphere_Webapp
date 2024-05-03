@@ -1,0 +1,3 @@
+APIServerURL/DelSeller/:id
+where ":id" is replaced with sellerID
+Deletes the account from the database entirely

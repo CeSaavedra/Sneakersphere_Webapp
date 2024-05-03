@@ -1,0 +1,7 @@
+GET request like:
+
+/GetSeller/testEmail@gmail.com&testPass
+
+
+Returns a JSON filled with all seller info, includes sellerID which should be stored for use in other endpoint calls
+Returns an empty JSON object if there is no matching email/password combo within the database.

@@ -1,0 +1,37 @@
+/GetSellerAddress/:id    where ":id" = sellerID
+Responds with only seller's streetAddress
+
+/GetSellerCity/:id    where ":id" = sellerID
+Responds with only seller's city
+
+/GetSellerState/:id    where ":id" = sellerID
+Responds with only seller's state
+
+/GetSellerZip/:id    where ":id" = sellerID
+Responds with only seller's zipCode in int form
+
+/SetSellerAddress/:id    where ":id" = sellerID
+Updates seller's streetAddress to whatever is sent in the body of request, body formatted like:
+{
+   "streetAddress" = "exampleAddress"
+}
+
+
+/SetSellerCity/:id    where ":id" = sellerID
+Updates seller's city to whatever is sent in the body of request, body formatted like:
+{
+   "city" = "exampleCity"
+}
+
+
+/SetSellerState/:id    where ":id" = sellerID
+Updates seller's state to whatever is sent in the body of request, body formatted like:
+{
+   "state" = "exampleState"
+}
+
+/SetSellerZip/:id    where ":id" = sellerID
+Updates seller's state to whatever is sent in the body of request, body formatted like:
+{
+   "zipCode" = zipCode#
+}

@@ -1,0 +1,8 @@
+/GetSellerPostCount/:id    where ":id" = sellerID
+Responds with only seller's postCount in int form
+
+/SetSellerPostCount/:id    where ":id" = sellerID
+Updates seller's postCount to whatever int is sent in the body of request, body formatted like:
+{
+   "postCount" = 2
+}

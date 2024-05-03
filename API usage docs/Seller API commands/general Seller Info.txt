@@ -1,0 +1,37 @@
+Seller API Node application and Docs written by Kyle Merkins
+Primary key sellerID is unique to each account
+
+Emails are unique, email and password matching are used to fetch the sellerID, which can be used for all other API operations
+
+userNames are NOT UNIQUE
+
+All GET requests return an array of JSON objects (with just ONE obj in the array) with key:value pairs that follow one naming scheme:
+ex: GetSellers/
+[
+ {
+        "firstName": "tester",
+        "lastName": "Ltest",
+        "streetAddress": "29 tester St",
+        "city": "testCity",
+        "state": "Maryland",
+        "email": "testEmail@gmail.com",
+        "password": "testPass",
+        "phoneNumber": "23215850",
+        "birthday": "2000-12-19",
+        "gender": "male",
+        "subscriberCount": "0",
+        "zipCode": "21921",
+        "postCount": "0",
+        "sellerID": "1",
+        "userName": "testUsername"
+ }
+]
+You will have to access the first index of the array to access the object
+
+
+PUT requests follow the same structure, where the body of the request will contain the relevant key:value pair that is to be updated, such as:
+{
+   "lastName":"newLastName"
+}
+
+birthday is a DATE type, not just a string, GET requests will show a string with added time zone info

@@ -1,0 +1,30 @@
+/GetSellerFname/:id    where ":id" = sellerID
+Responds with only seller's firstName
+
+
+/SetSellerFname/:id    where ":id" = sellerID
+Updates seller's firstName to whatever is sent in the body of request, body formatted like:
+{
+   "firstName" = "exampleName"
+}
+
+
+/GetSellerLname/:id    where ":id" = sellerID
+Responds with only seller's lastName
+
+
+/SetSellerLname/:id    where ":id" = sellerID
+Updates seller's lastName to whatever is sent in the body of request, body formatted like:
+{
+   "lastName" = "exampleName"
+}
+
+/GetSellerUsername/:id    where ":id" = sellerID
+Responds with only seller's userName
+
+
+/SetSellerUsername/:id    where ":id" = sellerID
+Updates seller's userName to whatever is sent in the body of request, body formatted like:
+{
+   "userName" = "exampleName"
+}

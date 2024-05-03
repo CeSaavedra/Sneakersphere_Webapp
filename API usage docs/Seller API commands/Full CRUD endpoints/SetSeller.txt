@@ -1,0 +1,16 @@
+SetSeller is used to UPDATE seller information, the PUT request body should be formatted like this:
+{
+    "userName":"testuserName",
+    "email":"testEmail@gmail.com",
+    "password":"testPass",
+    "firstName":"tester",
+    "lastName":"Ltest",
+    "streetAddress":"29 tester St",
+    "city":"testCity",
+    "state":"Maryland",
+    "zipCode":21921,
+    "birthday":"2000-12-19",
+    "gender":"male"
+}
+
+the endpoint URL is /SetSeller/:id where :id is the target account's sellerID

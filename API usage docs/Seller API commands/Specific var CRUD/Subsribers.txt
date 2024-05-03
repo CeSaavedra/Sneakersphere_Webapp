@@ -1,0 +1,8 @@
+/GetSellerSubCount/:id    where ":id" = sellerID
+Responds with only seller's subscriberCount in int form
+
+/SetSellerAddress/:id    where ":id" = sellerID
+Updates seller's subscriberCount to whatever int is sent in the body of request, body formatted like:
+{
+   "subscriberCount" = 4
+}

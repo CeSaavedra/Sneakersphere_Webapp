@@ -1,0 +1,17 @@
+APIServerURL/CreateSeller
+The CreateSeller post requests body should contain information formatted like:
+
+
+{
+    "email":"testEmail@gmail.com",
+    "userName":"testUsername",
+    "password":"testPass",
+    "firstName":"tester",
+    "lastName":"Ltest",
+    "streetAddress":"29 tester St",
+    "city":"testCity",
+    "state":"Maryland",
+    "zipCode":21921,
+    "birthday":"2000-12-19",
+    "gender":"male"
+}
