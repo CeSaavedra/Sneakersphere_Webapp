@@ -124,13 +124,6 @@ input{
 #city-container{
     width:55%;
 }
-#birthday-input-container{
-    display:flex;
-    justify-content:space-evenly;
-}
-#birthday-input-container input{
-    width:25%;
-}
 #birthday-container label{
     width:100%;
 }
@@ -139,7 +132,10 @@ input{
     font-size:125%;
     margin-top:5%;
 }
-
+#register-gender{
+    width:50%;
+    margin:auto;
+}
 /* ---------- Responsive Adaptations for Resolutions ---------- */
 
 /* Adapt to Tablets */

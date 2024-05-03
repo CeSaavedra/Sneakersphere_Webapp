@@ -85,44 +85,53 @@
 								<!-- Email Input -->
 								<div id="email" class="form-group">
 									<label for="register-email">Email Address</label>
-									<input type="email" class="form-control">
+									<input type="email" class="form-control" name="register-email">
 								</div>
 								<div id="username" class="form-group">
 									<label for="register-username">Username</label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="register-username">
 								</div>
 								<!-- Password Input -->
 								<div id="pwd-container" class="form-group">
 									<label for="register-pwd">Password</label>
-									<input type="password" class="form-control">
+									<input type="password" class="form-control" name="register-pwd">
 								</div>
 								<div id="first-name-container" class="form-group">
 									<label for="register-first-name">First Name</label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="register-first-name">
 								</div>
 								<div id="last-name-container" class="form-group">
 									<label for="register-last-name">Last Name</label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="register-last-name">
+								</div>
+								<div id="gender-container" class="form-group">
+									<label for="register-gender">Gender</label>
+									<select id="register-gender" class="form-control" name="register-gender">
+										<option selected>Choose...</option>
+										<option value="male">Male</option>
+										<option value="female">Female</option>
+										<option value="other">Other</option>
+									</select>
 								</div>
 							</div>
 							<div id="right-col" class="col-sm-6">
 								<div id="address-container" class="form-group">
 									<label for="register-address">Street Address</label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="register-address">
 								</div>
 								<div id="city-container" class="form-group">
 									<label for="register-city">City</label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="register-city">
 								</div>
 								<div id="state-zip-container" class="form-group">
 
 									<div id="zip-container">
 										<label for="register-zip">Zip Code</label>
-										<input type="text" class="form-control short-input">
+										<input type="text" class="form-control short-input" name="register-zip">
 									</div>
 									<div id="state-container" class="form-group col-md-6">
 										<label for="register-state">State</label>
-										<select id="register-state" class="form-control">
+										<select id="register-state" class="form-control" name="register-state">
 											<option selected>Choose...</option>
 											<option value="AL">Alabama</option>
 											<option value="AK">Alaska</option>
@@ -179,15 +188,11 @@
 								</div>
 								<div id="phone-container" class="form-group">
 									<label for="register-phone">Phone Number</label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" name="register-phone">
 								</div>
 								<div id="birthday-container" class="form-group">
-									<label for="register-birthday">Birthday (MM/DD/YYYY)</label>
-									<div id="birthday-input-container">
-										<input type="text" class="form-control birthday-input">
-										<input type="text" class="form-control birthday-input">
-										<input type="text" class="form-control birthday-input">
-									</div>
+									<label for="register-birthday">Birthday</label>
+									<input type ="date" class="form-control" name="register-birthday">
 								</div>
 							</div>
 						</div>
@@ -210,6 +215,6 @@
 	<!-- Footer -->
 	<footer class="container-fluid text-center">
 	</footer>
-
+	<script src="../js/seller-register.js"></script>
 </body>
 </html>

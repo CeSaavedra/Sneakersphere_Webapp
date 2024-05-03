@@ -8,16 +8,17 @@ form.addEventListener('submit', function(e) {
   // Capture the form data
   let formData = {
     email: form.elements['register-email'].value,
-    username: form.elements['register-username'].value,
+    userName: form.elements['register-username'].value,
     password: form.elements['register-pwd'].value,
     firstName: form.elements['register-first-name'].value,
     lastName: form.elements['register-last-name'].value,
-    address: form.elements['register-address'].value,
+    streetAddress: form.elements['register-address'].value,
     city: form.elements['register-city'].value,
-    zip: form.elements['register-zip'].value,
     state: form.elements['register-state'].value,
-    phone: form.elements['register-phone'].value,
-    birthday: form.elements['register-birthday'].value
+    zipCode: form.elements['register-zip'].value,
+    phoneNumber: form.elements['register-phone'].value,
+    birthday: form.elements['register-birthday'].value,
+    gender: form.elements['register-gender'].value
   };
 
   // Sends a POST request
