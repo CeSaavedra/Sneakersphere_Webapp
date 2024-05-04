@@ -1,18 +1,22 @@
-/* Implements Imported Font */
+/* ============ Google Fonts ============ */
 .bebas-neue-regular {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-/* ---------- Navbar Header Elements ---------- */
+/* ============ Navbar Elements ============ */
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
     background-color: #0d0d0d;
     height: 10em;
+    width:100%;
+    top:0;
+    position:fixed;
+    z-index: 9999;
 }
-.navbar-brand img{ /* SneakerSphere Logo */
+.navbar-brand img{ 
     height: 750%;
     width:auto;
     transform: translateY(-15%);
@@ -22,7 +26,7 @@
     width:225%;
     height: 4em;
 }
-#brand-title{   /* SneakerSphere Title */
+#brand-title{   
     font-size: 600%;
     font-family: 'Bebas Neue';
     font-stretch: ultra-expanded;
@@ -33,7 +37,7 @@
 #brand-title:hover{
     text-shadow: 3px 3px 3px #424242;
 }
-#lock-icn{ /* Login Button */
+#lock-icn{ 
     font-size:2em;
     padding-right:1em;
     transform: translateY(170%);
@@ -41,13 +45,16 @@
     background-color: transparent;
 }
 
-/* --------- Elements of the Side Columns ---------- */
+/* ============ Side Column Elements ============ */
 .sidenav {
     min-height: 100vh;
     background-color: #141414;
 }
 
-/* ---------- Elements of the Center Column ---------- */
+/* ============ Center Column Elements ============ */
+#content{
+    margin-top:10em;
+}
 #content-col {
     position:relative;
     min-height: 100vh;
@@ -62,9 +69,16 @@
     border-radius:5%;
     height:auto;
 }
+/* Containers within Registration UI */
 #title-container{
     height:15%;
 }
+#input-container{
+    display:flex;
+    height:auto;
+}
+
+/* Elements in #title-container */
 #title-container p{
     position:relative;
     font-family: 'Bebas Neue';
@@ -74,23 +88,7 @@
     margin-bottom:3%;
 }
 
-#login-link{
-    position:relative;
-    display:block;
-    margin-left:auto;
-    margin-right:auto;
-    font-size:125%;
-    color:#4096ef;
-    width:50%;
-    margin-top:5%;
-    margin-bottom:5%;
-}
-/* CSS Rules implemented onto form Elements */
-
-#input-container{
-    display:flex;
-    height:auto;
-}
+/* Elements in #input-container */
 #right-col{
     position:relative;
     width:40%;
@@ -127,16 +125,30 @@ input{
 #birthday-container label{
     width:100%;
 }
+#register-gender{
+    width:50%;
+    margin:auto;
+}
+
+/* Elements in #footer-container */
 #submit{
     width:18%;
     font-size:125%;
     margin-top:5%;
 }
-#register-gender{
+#login-link{
+    position:relative;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:125%;
+    color:#4096ef;
     width:50%;
-    margin:auto;
+    margin-top:5%;
+    margin-bottom:5%;
 }
-/* ---------- Responsive Adaptations for Resolutions ---------- */
+
+/* ============ Responsive Adaptations ============ */
 
 /* Adapt to Tablets */
 @media screen and (min-width: 768px) and (max-width: 991px){ 
