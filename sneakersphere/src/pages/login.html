@@ -3,24 +3,24 @@
 
 <head>
 
-	<!-- Displayed on Browser Tab -->
+	<!-- ======== Browser Tab Display ======== -->
 	<title>SneakerSphere</title>
 	<link rel="icon" href="..\assets\images\ss_logo.PNG">
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Plugs in Custom Google Font -->
+	<!-- ======== Google Fonts API ======== -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-	<!-- Defines CSS Stylesheets -->
+	<!-- ======== CSS Style Sheets ======== -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/login.css">
 
 
-	<!-- Defines Libraries -->
+	<!-- ======== JS Libraries ======== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -28,11 +28,10 @@
 
 <body>
 
-	<!-- Defines Navbar -->
+	<!-- ======== Contains Entire Navbar ======== -->
 	<nav class="navbar">
-		<!-- Allows container fluidity (Spans full width) -->
 		<div class="container-fluid">
-			<!-- Navbar Header Elements -->
+			<!-- SneakerSphere Logo -->
 			<div class="navbar-header">
 				<a class="navbar-brand" href="../index.html">
 					<img class="navbar-brand" id="logo" src="..\assets\images\ss_logo.PNG"></a>
@@ -41,6 +40,7 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<li>
+						<!-- SneakerSphere Title -->
 						<span>
 							<a href="../index.html" class="navbar-brand mt-1" id="brand-title">
 								SneakerSphere
@@ -48,6 +48,7 @@
 						</span>
 					</li>
 					<li>
+						<!-- Search Bar -->
 						<form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
 								<input type="text" id="search-bar" class="form-control"
@@ -56,6 +57,7 @@
 						</form>
 					</li>
 				</ul>
+				<!-- Lock Icon -->
                 <ul class="nav navbar-nav navbar-right">
 					<li><span id="lock-icn" class="glyphicon glyphicon-lock"></span></li>
 				</ul>
@@ -63,78 +65,78 @@
 		</div>
 	</nav>
 
-	<!-- Contains all content under Navbar -->
-	<div class="container-fluid text-center">
+	<!-- ======== Contains All Content Under Navbar ======== -->
+	<div id="content" class="container-fluid text-center">
 		<div class="row content">
 
-			<!-- Left Column Container -->
+			<!-- ======== Contains Left Column ======== -->
 			<div class="col-sm-2 sidenav">
 			</div>
 
-			<!-- Center Column Container -->
+			<!-- ======== Contains Center Column ======== -->
 			<div id="content-col" class="col-sm-8 text-left">
 				<div class="row">
-					<div id="login-box" class="col-sm-8 text-center">
+					<!-- ======== Contains Login UI ======== -->
+					<div id="login-container" class="col-sm-8 text-center">
+						<!-- ======== Prompt Container ======== -->
 						<div id="prompt-container" class="col">
 							<p id="prompt-title">Are you a Buyer or Seller</p>
 							<button id="buyer-btn" class="btn">Buyer</button>
 							<button id="seller-btn"class="btn">Seller</button>
 						</div>
+						<!-- ======== Buyer Login Container ======== -->
 						<div id="buyer-container" class="col" style="display:none;">
 							<!-- Buyer Login Form -->
 							<form action="/action_page.php">
 								<a id="return-btn" href="/sneakersphere/src/pages/login.html"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a>
 								<p id="login-title">SneakerSphere <span style="color:white;">Buyer</span> Login</p>
 								<!-- Email Input -->
-								<div id="username" class="form-group">
+								<div id="email-container" class="form-group">
 								  <label for="login-email">Email</label>
-								  <input type="buyer-email" class="form-control" id="email">
+								  <input type="buyer-email" class="form-control" id="buyer-email">
 								</div>
 								<!-- Password Input -->
-								<div id="pwd" class="form-group">
+								<div id="pwd-container" class="form-group">
 								  <label for="login-pwd">Password</label>
-								  <input type="password" class="form-control" id="pwd">
+								  <input type="password" class="form-control" id="buyer-pwd">
 								</div>
-								<!-- Login button and register link -->
-								<button id="buyer-submit" type="submit" class="btn btn-default">Login</button>
+								<!-- Login button and Register link -->
+								<button id="buyer-submit" type="submit" class="btn btn-default login">Login</button>
 								<a href="buyer-register.html" id="register-link">Don't have an account? Register Here</a>
 							</form> 						
 						</div>
+						<!-- ======== Seller Login Container ======== -->
 						<div id="seller-container" class="col" style="display:none;">
 							<!-- Seller Login Form -->
 							<form action="/action_page.php">
 								<a id="return-btn" href="/sneakersphere/src/pages/login.html"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a>
 								<p id="login-title">SneakerSphere <span style="color:white;">Seller</span> Login</p>
 								<!-- Email Input -->
-								<div id="username" class="form-group">
+								<div id="email-container" class="form-group">
 								  <label for="login-email">Email</label>
-								  <input type="seller-email" class="form-control" id="email">
+								  <input type="seller-email" class="form-control" id="seller-email">
 								</div>
 								<!-- Password Input -->
-								<div id="pwd" class="form-group">
+								<div id="pwd-container" class="form-group">
 								  <label for="login-pwd">Password</label>
-								  <input type="password" class="form-control" id="pwd">
+								  <input type="password" class="form-control" id="seller-pwd">
 								</div>
 								<!-- Login button and register link -->
-								<button id="seller-submit" type="submit" class="btn btn-default">Login</button>
+								<button id="seller-submit" type="submit" class="btn btn-default login">Login</button>
 								<a href="seller-register.html" id="register-link">Don't have an account? Register Here</a>
 							</form> 							
 						</div>
 					</div>
 				</div>
-				<script src="../js/login.js"></script>
 			</div>
 
-			<!-- Right Column Container -->
+			<!-- ======== Contains Right Column ======== -->
 			<div class="col-sm-2 sidenav">
 			</div>
 
 		</div>
 	</div>
-
-	<!-- Footer -->
-	<footer class="container-fluid text-center">
-	</footer>
-
+	<!-- Implements login.js -->
+	<script src="../js/login.js"></script>
 </body>
 </html>

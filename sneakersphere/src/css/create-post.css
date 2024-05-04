@@ -1,18 +1,22 @@
-/* Implements Imported Font */
+/* ============ Google Fonts ============ */
 .bebas-neue-regular {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-/* ---------- Navbar Header Elements ---------- */
+/* ============ Navbar Elements ============ */
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
     background-color: #0d0d0d;
     height: 10em;
+    width:100%;
+    top:0;
+    position:fixed;
+    z-index: 9999;
 }
-.navbar-brand img{ /* SneakerSphere Logo */
+.navbar-brand img{ 
     height: 750%;
     width:auto;
     transform: translateY(-15%);
@@ -22,7 +26,7 @@
     width:225%;
     height: 4em;
 }
-#brand-title{   /* SneakerSphere Title */
+#brand-title{  
     font-size: 600%;
     font-family: 'Bebas Neue';
     font-stretch: ultra-expanded;
@@ -34,7 +38,7 @@
     text-shadow: 3px 3px 3px #424242;
 }
 
-#login-btn{ /* Login Button */
+#login-btn{ 
     font-size:2em;
     transform: translateY(40%);
     color:#cfcfcf;
@@ -45,18 +49,21 @@
     text-shadow: 3px 3px 3px #424242;
 }
 
-/* --------- Elements of the Side Columns ---------- */
+/* ============ Side Column Elements ============ */
 .sidenav {
     min-height: 100vh;
     background-color: #141414;
 }
 
-/* ---------- Elements of the Center Column ---------- */
+/* ============ Center Column Elements ============ */
+#content{
+    margin-top:10em;
+}
 #content-col {
     min-height: 100vh;
     background-color: #434343;
 }
-#create-container{   /* Contains login container */
+#create-container{  
     position:absolute;
     left:16%;
     background-color: #2f2f2f;
@@ -66,10 +73,14 @@
     top:10%;
     height:80%;
 }
+
+/* Containers within Post Creation UI */
 #title-container{
     height:15%;
     padding-bottom:3.5%;
 }
+
+/* Elements within #title-container */
 #title-container p{
     position:relative;
     font-family: 'Bebas Neue';
@@ -78,6 +89,7 @@
     margin-top:3%;
     margin-bottom:3%;
 }
+/* Elements withing #input-container */
 #sneaker-title-container{
     display:flex;
     align-items:center;
@@ -96,7 +108,6 @@
     padding-left:5%;
     padding-bottom:5%;
 }
-
 #description-container{
     display:flex;
     width:90%;
@@ -122,7 +133,7 @@ label{
     width:50%;
 }
 
-/* ---------- Responsive Adaptations for Resolutions ---------- */
+/* ============ Responsive Adaptations ============ */
 
 /* Adapt to Minimal Screens */
 @media screen and (max-width: 575px) { 
@@ -135,7 +146,7 @@ label{
         padding-right: 0%;
         
     }
-    .navbar-brand img{ /* SneakerSphere Logo */
+    .navbar-brand img{ 
         display:none;
     }
 }
@@ -155,7 +166,7 @@ label{
         font-stretch: ultra-condensed;
         padding-right: 0%;
     }
-    .navbar-brand img{ /* SneakerSphere Logo */
+    .navbar-brand img{ 
         height: 550%;
         width:auto;
         transform: translateY(-8%);
