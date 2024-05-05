@@ -81,7 +81,7 @@
 					<div id="register-container" class="col-sm-8 text-center">
 						
 						<!-- Registration Form -->
-						<form>
+						<form id="register-form">
 							<!-- Registration Title -->
 							<div id="title-container" class="row">
 								<p id="register-title">Register a <span style="color:white;">Buyer</span> Account</p>
@@ -94,23 +94,19 @@
 								<div id="left-col" class="col-sm-6">
 									<div id="email" class="form-group">
 										<label for="register-email">Email Address</label>
-										<input type="email" class="form-control">
+										<input type="email" class="form-control" name="register-email">
 									</div>
 									<div id="username" class="form-group">
 										<label for="register-username">Username</label>
-										<input type="text" class="form-control">
+										<input type="text" class="form-control" name="register-username">
 									</div>
 									<div id="pwd-container" class="form-group">
 										<label for="register-pwd">Password</label>
-										<input type="password" class="form-control">
+										<input type="password" class="form-control" name="register-pwd">
 									</div>
-									<div id="first-name-container" class="form-group">
-										<label for="register-first-name">First Name</label>
-										<input type="text" class="form-control">
-									</div>
-									<div id="last-name-container" class="form-group">
-										<label for="register-last-name">Last Name</label>
-										<input type="text" class="form-control">
+									<div id="shoe-size-container" class="form-group">
+										<label for="register-shoe-size">Shoe Size</label>
+										<input type="text" class="form-control" name="register-shoe-size">
 									</div>
 								</div>
 
@@ -118,20 +114,20 @@
 								<div id="right-col" class="col-sm-6">
 									<div id="address-container" class="form-group">
 										<label for="register-address">Street Address</label>
-										<input type="text" class="form-control">
+										<input type="text" class="form-control" name="register-address">
 									</div>
 									<div id="city-container" class="form-group">
 										<label for="register-city">City</label>
-										<input type="text" class="form-control">
+										<input type="text" class="form-control" name="register-city">
 									</div>
 									<div id="state-zip-container" class="form-group">
 										<div id="zip-container">
 											<label for="register-zip">Zip Code</label>
-											<input type="text" class="form-control short-input">
+											<input type="text" class="form-control short-input" name="register-zip">
 										</div>
 										<div id="state-container" class="form-group col-md-6">
 											<label for="register-state">State</label>
-											<select id="register-state" class="form-control">
+											<select id="register-state" class="form-control" name="register-state">
 												<option selected>Choose...</option>
 												<option value="AL">Alabama</option>
 												<option value="AK">Alaska</option>
@@ -186,10 +182,6 @@
 											</select>
 										</div>
 									</div>
-									<div id="phone-container" class="form-group">
-										<label for="register-phone">Phone Number</label>
-										<input type="text" class="form-control">
-									</div>
 								</div>
 							</div>
 							
@@ -209,6 +201,7 @@
 
 		</div>
 	</div>
+	<script src="../js/buyer-register.js"></script>
 </body>
 
 </html>
