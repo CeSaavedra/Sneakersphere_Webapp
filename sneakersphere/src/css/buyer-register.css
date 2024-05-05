@@ -124,7 +124,9 @@ input{
 #city-container{
     width:55%;
 }
-
+#shoe-size-container{
+    width:50%;
+}
 /* Elements in #footer-container */
 #submit{
     width:18%;

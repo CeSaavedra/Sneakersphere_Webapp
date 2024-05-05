@@ -76,8 +76,7 @@
 
 			<!-- ======== Contains Center Column ======== -->
 			<div id="content-col" class="col-sm-8 text-left">
-				<div id="content-container">
-
+				<div id="profile-container"  style="display:none;">
 					<!-- ======== Contains Profile Details ======== -->
 					<div id="seller-info-container">
 						<!-- Profile Picture -->
@@ -85,6 +84,9 @@
 							<img src="../assets/images/profilepic.png">
 						</div>
 						<div id="seller-text-info">
+							<div id="edit-container">
+								<button id="edit-btn" class="btn"><span class="glyphicon glyphicon-pencil"></span></button>
+							</div>
 							<!-- Username -->
 							<div id="username-container">
 								<p id="username">Username</p>
@@ -99,6 +101,74 @@
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, q</p>
 							</div>
 						</div>
+					</div>
+					<div id="listings">
+						<div class="row my-3 py-3">
+
+							<!-- ======== Contains listing ======== -->
+							<div id="listing-main-container" class="col">
+
+								<!-- Listing Title -->
+								<div id="listing-title-container">
+									<p id="listing-title">Jordan 11 RetroDMP Gratitude (2023)</p>
+								</div>
+
+								<!-- Listing Image, Price, and Size -->
+								<div id="image-container">
+									<div id="price-container">
+										<p id="price">$<span id="listing-price">1000</span></p>
+									</div>
+									<div id="size-container">
+										<p id="size">Size: <span id="listing-size">10.5</span></p>
+									</div>
+									<img class="mySlides" src="..\assets\images\listing_test1.jpg">
+									<img class="mySlides" src="..\assets\images\listing_test2.jpg">
+									<button class="prev" onclick="plusDivs(-1, 'image-container')"><span
+											class="glyphicon glyphicon-circle-arrow-left"></span></button>
+									<button class="next" onclick="plusDivs(1, 'image-container')"><span
+											class="glyphicon glyphicon-circle-arrow-right"></span></button>
+								</div>
+
+								<!-- Listing Username and Description -->
+								<div id="info-container">
+									<p id="listing-name" class="text-left"><a href="index.html">Username Here</a></p>
+									<p id="listing-sh-desc" class="text-left">Lorem ipsum dolor sit amet, consectetur
+										adipiscing
+										elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+										ad
+										minim veniam, q</p>
+								</div>
+
+								<!-- Checkout and Like Button -->
+								<button id="listing-checkout"><span class="glyphicon glyphicon-shopping-cart"></span>
+									Add to
+									Cart</button>
+								<a id="listing-like" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+							</div>
+
+						</div>
+						
+					</div>
+				</div>
+				<div id="edit-container">
+					<div id="edit-acc-title" class="edit-title">
+						<p>Edit Account</p>
+					</div>
+					<div id="edit-acc-container">
+						<div id="acc-input-container">
+							<div class="edit-field">
+								<div class="label-container"></div>
+							</div>
+						</div>
+						<div id="image-input-container">
+							
+						</div>
+					</div>
+					<div id="edit-info-title" class="edit-title">
+						<p>Edit Personal Information</p>
+					</div>
+					<div id="edit-info-container">
+						
 					</div>
 				</div>
 			</div>
