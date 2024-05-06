@@ -11,7 +11,11 @@
   font-weight: 400;
   font-style: normal;
 }
-
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 /* ============ Navbar Elements ============ */
 .navbar {
     margin-bottom: 0;
@@ -80,38 +84,204 @@
 #edit-container{
   width:100%;
   min-height:100vh;
-  background-color:red;
+  background-color: #252525;
 }
-/* ============ Elements of #edit-container ============ */
+/* ======================== Elements of #edit-container ======================== */
 #edit-acc-title{
   position:absolute;
   height:8%;
   width:100%;
-  background-color:blue;
-}
-#edit-acc-container{
-  display:flex;
-  position:absolute;
-  height:42%;
-  width:100%;
-  top:8%;
-  background-color:green;
 }
 #edit-info-title{
   position:absolute;
   top:50%;
   height:8%;
   width:100%;
-  background-color:orange;
 }
+#back-btn{
+  position:absolute;
+  top:30%;
+  left:5%;
+  font-size:150%;
+  opacity:0.5;
+  background-color:transparent;
+  border:0;
+  color:white;
+}
+#back-btn:hover{
+  opacity:1;
+}
+#refresh-data-btn{
+  position:absolute;
+  top:30%;
+  right:5%;
+  font-size:150%;
+  opacity:0.5;
+  background-color:transparent;
+  border:0;
+  color:white;
+}
+#refresh-data0.-btn:hover{
+  opacity:1;
+}
+
+
+/* ===== 2 Nested Containers for each Half of #edit-info-container ===== */
+
 #edit-info-container{
   position:absolute;
+  display:flex;
   top:58%;
   height:42%;
   width:100%;
-  background-color:pink;
+}
+/* Left half of parent container */
+#left-input-container{
+  position:relative;            
+  height:100%;
+  width:50%;
+  padding:2%;
+}
+#left-form-container{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  width:100%;
+  padding:2%;
+  text-align:center;
+}
+/* Right half of parent container */
+#right-input-container{
+  position:relative;
+  height:100%;
+  width:50%;
+  padding:2%;
+}
+#right-form-container{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  width:100%;
+  padding:2%;
+  text-align:center;
 }
 
+
+/* ===== 2 Nested Containers for each Half of #edit-acc-container ===== */
+
+#edit-acc-container{
+  display:flex;
+  position:absolute;
+  height:42%;
+  width:100%;
+  top:8%;
+}
+/* Left half of parent container */
+#acc-input-container{
+  position:relative;
+  height:100%;
+  width:50%;
+  padding:2%;
+}
+.edit-field{
+  position:relative;
+  align-items:center;
+  margin:auto;
+  display:flex;
+  height:20%;
+  width:100%;
+  padding:1%;
+}
+#edit-bio-container{
+  height:8em;
+}
+#edit-bio{
+  object-fit:contain;
+  position:relative;
+
+}
+#bio-input{
+  border-radius:5%;
+  width:95%;
+  background-color:#363636;
+  border: 1px solid #212121;
+  color:white;
+}
+
+/* Right half of parent container */
+#acc-image-container{
+  position:relative;
+  height:100%;
+  width:50%;
+  padding:2%;
+  color:white;
+}
+
+#image-input-container{
+  position:relative;
+  display:flex;
+  height:100%;
+  width:100%;
+  padding:2%;
+  text-align:center;
+}
+
+
+#image-preview-container{
+  position:relative;
+  height:100%;
+  width:40%;
+  padding:2%;
+
+  font-size:150%;
+  font-family: "Poppins", sans-serif;
+
+}
+#preview-image{
+  object-fit:contain;
+  width:80%;
+  height:auto;    
+  max-height:100%;
+  max-width:100%;
+  border-radius:50%;
+  border: 4px solid #4d4d4d;
+}
+
+#file-input-container{
+  position:relative;
+  height:100%;
+  width:60%;
+  font-size:50%;
+  font-family: "Poppins", sans-serif;
+  
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:10%;
+  font-size:100%;
+}
+#submit-image{
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top:20%;
+  height:auto;
+  color:black;
+}
+#input-image{
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  align-items:center;
+  text-align:left;
+}
+
+/* ===== Class Elements ===== */
 .edit-title p{
   margin-top:1%;
   margin-bottom:1%;
@@ -120,27 +290,71 @@
   font-family: "Bebas Neue", sans-serif;
   color:white;
 }
-.edit-field{
-  position:relative;
-  align-items:center;
-  background-color:cyan;
-  height:20%;
-  width:100%;
+.edit-field p{
+  color:white;
+  font-size:1.25em;
 }
 .label-container{
   position:relative;
   height:100%;
-  width:28%;
-  background-color:green;
+  width:25%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
-#acc-input-container{
+.input-field-container{
   position:relative;
   height:100%;
-  background-color:yellow;
-  width:50%;
-  padding:2%;
+  width:60%;
+  border: 1.5px solid #3b3b3b;
+  border-radius:7%;
+  display:flex;
+  
+  justify-content:center;
+  align-items:center;
 }
-/* ============ Elements of #profile-container ============ */
+.input-field-container p{
+  color:#cdcdcd;
+  position:relative;
+  margin:2.5%;
+}
+.button-container{
+  position:relative;
+  height:100%;
+  width:15%;
+
+  display:flex;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.edit-btn{
+  background-color:#1c1c1c;
+  color:white;
+  border-radius:50%;
+}
+.input-field-container input{
+  width:95%;
+  height:70%;
+  border-radius:5%;
+  background-color:#363636;
+  border: 1px solid #212121;
+  color:white;
+}
+.exit-btn{
+  background-color:transparent;
+  border: 0;
+  color:red;
+  font-size:125%;
+}
+.confirm-btn{
+  background-color:transparent;
+  border: 0;
+  color:#27c148;
+  font-size:125%;
+}
+
+/* ======================== Elements of #profile-container ======================== */
 
 /* Containers within Center column */
 #seller-info-container {
@@ -153,14 +367,22 @@
   border-bottom: 5px solid #262626;
 }
 
+
 /* Elements of #seller-info-container */
 
-#edit-btn{
+#nav-edit-container{
   position:absolute;
+  height:15%;
+  width:20%;
   top:10%;
   right:0;
-  height:10%;
-  width:6%;
+  display:flex;
+  justify-content:space-evenly;
+}
+
+.profile-nav-btn{
+  position:relative;
+  height:100%;
 
   background-color:transparent;
   border: 1px solid white;
@@ -228,7 +450,7 @@
   color:#b9b9b9;
   font-stretch:ultra-expanded;
 }
-/* === Listing UI Elements === */
+/* ================ Listing UI Elements ================ */
 #listings{
   height:60%;
   width:100%;
