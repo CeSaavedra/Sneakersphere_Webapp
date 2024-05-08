@@ -106,6 +106,10 @@
   
 }
 
+  #left-column-container img {
+    height:15em;
+    width: 15em;
+  }
   p{
     font-size: 30px;
     margin-top: 10px;
@@ -162,5 +166,7 @@
     justify-content: space-between;
     
   }
+
+
 
  
