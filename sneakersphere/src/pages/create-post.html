@@ -3,27 +3,28 @@
 
 <head>
 
-	<!-- ======== Browser Tab Display ======== -->
-	<title>SneakerSphere</title>
-	<link rel="icon" href="..\assets\images\ss_logo.PNG">
+    <!-- ======== Browser Tab Display ======== -->
+    <title>SneakerSphere</title>
+    <link rel="icon" href="..\assets\images\ss_logo.PNG">
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- ======== Google Fonts API ======== -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- ======== Google Fonts API ======== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-	<!-- ======== CSS Style Sheets ======== -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/create-post.css">
+    <!-- ======== CSS Style Sheets ======== -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/create-post.css">
 
-	<!-- ======== JS Libraries ======== -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- ======== JS Libraries ======== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
 
     <!-- ======== Contains Entire Navbar ======== -->
@@ -55,16 +56,23 @@
                         </form>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- Login-Button -->
-                    <li><a id="login-btn" href="/sneakersphere/src/pages/login.html"><span
-                                class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
+                <!-- Login -->
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<div id="nav-profilepic-container" class="navbar-brand">
+							<a id="profilepic-link" href="#"><img id="navbar-profilepic"></a>
+						</div>
+					</li>
+					<li>
+						<button id="logout-link"><span
+								class="glyphicon glyphicon-log-out"></span></button>
+					</li>
+				</ul>
             </div>
         </div>
     </nav>
 
-	<!-- ======== Contains All Content Under Navbar ======== -->
+    <!-- ======== Contains All Content Under Navbar ======== -->
     <div id="content" class="container-fluid text-center">
         <div class="row content">
 
@@ -73,56 +81,59 @@
             </div>
 
             <!-- ======== Contains Center Column ======== -->
-            <div id="content-col" class="col-sm-8 text-left">
-                <div class="row">
-                    <div id="create-container" class="col-sm-8 text-center">
+            <form id="post-form">
+                <div id="content-col" class="col-sm-8 text-left">
 
-                        <!-- Post Creation Form -->
-						<form action="/action_page.php">
-							<div id="title-container" class="row">
-                                <!-- Form Title -->
-								<p id="create-title">POST A LISTING</p>
-							</div>
-							<div id="input-container" class="row">
-                                <!-- Sneaker name, Brand, Size, price, image(s), and Description -->
-                                <div id="sneaker-title-container">
-                                    <label for="sneaker-title">Sneaker Name</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div id="brand-size-price-container">
-                                    <label for="create-brand">Brand</label>
-                                    <input type="text" class="form-control">
-                                    <label for="create-size">Size</label>
-                                    <input style="width:30%;"type="text" class="form-control">
-                                    <label for="create-price">Price</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div id="image-input-container">
-                                    <label for="create-brand">Upload Image(s)</label>
-                                    <input type="file" id="formFile" multiple>
-                                </div>
-                                <div id="description-container">
-                                    <label for="create-brand">Description</label>
-                                    <textarea class="form-control" rows="4"></textarea>
-                                </div>
-							</div>
-                            <!-- Form Footer -->
-							<div class="row" id="create-footer">
-                                <button id="submit" type="submit" class="btn btn-default">Create Post</button>
-							</div>
-						</form>
+                    <!-- Post Creation Form -->
+
+                    <div id="create-container" class="col-sm-8 text-center">
+                        <div id="title-container">
+                            <!-- Form Title -->
+                            <button id="profile-btn"><span class=" glyphicon glyphicon-circle-arrow-left"></span>
+                                Back</button>
+                            <p id="create-title">POST A LISTING</p>
+                        </div>
+                        <div id="input-container">
+                            <!-- Sneaker name, Brand, Size, price, image(s), and Description -->
+                            <div id="sneaker-title-container" class="input-line-container">
+                                <label for="sneaker-title">Sneaker Name</label>
+                                <input id="input-sneaker-name" type="text" class="form-control">
+                            </div>
+                            <div id="brand-size-price-container" class="input-line-container">
+                                <label for="create-brand">Brand</label>
+                                <input id="input-brand" type="text" class="form-control">
+                                <label for="create-size">Size</label>
+                                <input id="input-size" style="width:30%;" type="text" class="form-control">
+                                <label for="create-price">Price</label>
+                                <input id="input-price" type="text" class="form-control">
+                            </div>
+                            <div id="description-container" class="input-line-container">
+                                <label for="create-brand">Description</label>
+                                <textarea id="input-description" type="text" class="form-control" rows="4"></textarea>
+                            </div>
+                            <div id="image-input-container" class="input-line-container">
+                                <label for="create-brand">Upload Image</label>
+                                <input id="input-image" type="text">
+                                <button type="button" class="add-image" id="add-image"><span class="glyphicon glyphicon-plus-sign"></span>
+                                <button style="display:none;" id="cancel-image"><span class="glyphicon glyphicon-remove-sign"></span>
+                            </div>
+                        </div>
+                        <!-- Form Footer -->
+                        <div id="footer-container">
+                            <button id="submit" type="submit" class="btn btn-default">Create Post</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
 
-            <!-- ======== Contains Right Column ======== -->
+        <!-- ======== Contains Right Column ======== -->
             <div class="col-sm-2 sidenav">
             </div>
 
         </div>
     </div>
-    <!-- Implements login.js -->
-    <script src="../js/login.js"></script>
+    <!-- Implements create-post.js -->
+    <script src="../js/create-post.js"></script>
 </body>
 
 </html>

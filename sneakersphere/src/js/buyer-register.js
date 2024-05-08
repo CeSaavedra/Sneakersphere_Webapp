@@ -27,10 +27,16 @@ form.addEventListener('submit', function(e) {
   })
   .then(response => response.json())
   .then(data => {
-
+    console.log('Hello');
     console.log(data);
+    
   })
   .catch((error) => {
     console.error('Error:', error);
+  })
+  .finally(() => {
+    setTimeout(function() {
+      window.location.href = 's-to-b-profile.html'; // Redirect to 'profile.html' after 5 seconds
+    }, 5000);
   });
 });

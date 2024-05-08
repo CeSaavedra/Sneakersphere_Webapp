@@ -14,6 +14,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Freeman&family=Oswald:wght@200..700&display=swap"
+		rel="stylesheet">
 
 	<!-- Defines CSS Stylesheets -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -34,7 +40,7 @@
 		<div class="container-fluid">
 			<!-- Navbar Header Elements -->
 			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="../index.html">
 					<img class="navbar-brand" id="logo" src="..\assets\images\ss_logo.PNG"></a>
 			</div>
 
@@ -42,7 +48,7 @@
 				<ul class="nav navbar-nav">
 					<li>
 						<span>
-							<a href="index.html" class="navbar-brand mt-1" id="brand-title">
+							<a href="../index.html" class="navbar-brand mt-1" id="brand-title">
 								SneakerSphere
 							</a>
 						</span>
@@ -56,8 +62,26 @@
 						</form>
 					</li>
 				</ul>
+				<!-- Login -->
 				<ul class="nav navbar-nav navbar-right">
-					<li><a id="login-btn" href="/sneakersphere/src/pages/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a id="login-link" href="/sneakersphere/src/pages/login.html"><span
+								class="glyphicon glyphicon-log-in"></span>
+							Login</a>
+					</li>
+					<li>
+						<div id="nav-profilepic-container" class="navbar-brand">
+							<a style="display:none;" id="profilepic-link" href="#"><img id="navbar-profilepic"></a>
+						</div>
+					</li>
+					<li>
+						<a style="display:none;" id="buyer-link" href="#"><span
+								class="glyphicon glyphicon-user"></span></a>
+						
+					</li>
+					<li>
+						<button style="display:none;" id="logout-link"><span
+								class="glyphicon glyphicon-log-out"></span></a>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -65,7 +89,7 @@
 
 	<!-- Contains all content under Navbar -->
 	<div class="container-fluid text-center">
-		<div class="row content">
+		<div id="content" class="row content">
 
 			<!-- Left Column Container -->
 			<div class="col-sm-2 sidenav">
@@ -73,6 +97,265 @@
 
 			<!-- Center Column Container -->
 			<div id="content-col" class="col-sm-8 text-left">
+				<div id="buyer-container">
+					<div id="buyer-title-container">
+						<div id="icon-title-container">
+							<span class="glyphicon glyphicon-user" id="title-user-icon"></span>
+						</div>
+						<div id="buyer-username-container">
+							<h1 id="buyer-username"></h1>
+						</div>
+					</div>
+					<div id="buyer-listings-container">
+
+						<!-- SideNav within #buyer-listings-container -->
+						<div id="listings-sidenav">
+							<!-- Likes Container Button -->
+							<div id="liked-listings">
+								<button id="likes-btn"><span class="glyphicon glyphicon-heart">
+										<p> Liked</p>
+									</span></button>
+							</div>
+							<!-- Order History Container Button -->
+							<div id="order-history">
+								<button id="order-btn"><span class=" glyphicon glyphicon-time">
+										<p> Orders</p>
+									</span></button>
+							</div>
+							<div id="edit-buyer">
+								<!-- Edit Account Container Button -->
+								<button id="acc-btn"><span class="glyphicon glyphicon-user">
+										<p> Account</p>
+									</span></button>
+							</div>
+						</div>
+
+
+						<div id="buyer-content-containers">
+							<div id="liked-container" class="content-containers">
+								<div id="liked-title-container">
+									<h2>Liked Posts</h2>
+								</div>
+							</div>
+							<div id="order-container" style="display:none;" class="content-containers">
+								<div id="order-title-container">
+									<h2>Order History</h2>
+								</div>
+							</div>
+							<div id="edit-container" style="display:none;" class="content-containers">
+								<form id="edit-form">
+									<button id="refresh-btn"><span class="glyphicon glyphicon-repeat"></span></button>
+									<div id="edit-left-col">
+										
+										<h2>Account Details</h2>
+										<!-- EMAIL -->
+										<div class="edit-field">
+											<div class="label-container">
+												<p>Email</p>
+											</div>
+											<div class="input-field-container" id="email-border">
+												<p id="edit-email"></p>
+												<input id="email-input" type="email" class="form-control"
+													style="display:none;">
+											</div>
+											<div class="button-container">
+												<button id="edit-email-btn" class="edit-btn"><span
+														class="glyphicon glyphicon-pencil"></span></button>
+												<button id="exit-email-btn" class="exit-btn" style="display:none;"><span
+														class="glyphicon glyphicon-remove"></span></button>
+												<button id="confirm-email-btn" class="confirm-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-ok"></span></button>
+											</div>
+										</div>
+
+
+										<!-- USERNAME -->
+										<div class="edit-field">
+											<div class="label-container">
+												<p>Username</p>
+											</div>
+											<div class="input-field-container" id="username-border">
+												<p id="edit-username"></p>
+												<input id="username-input" type="text" class="form-control"
+													style="display:none;" name="input-username">
+											</div>
+											<div class="button-container">
+												<button id="edit-username-btn" class="edit-btn"><span
+														class="glyphicon glyphicon-pencil"></span></button>
+												<button id="exit-username-btn" class="exit-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-remove"></span></button>
+												<button id="confirm-username-btn" class="confirm-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-ok"></span></button>
+											</div>
+										</div>
+										<!-- SHOE SIZE -->
+										<div class="edit-field">
+											<div class="label-container">
+												<p>Shoe Size</p>
+											</div>
+											<div class="input-field-container" id="size-border">
+												<p id="edit-size"></p>
+												<input id="size-input" type="text" class="form-control"
+													style="display:none;" name="input-size">
+											</div>
+											<div class="button-container">
+												<button id="edit-size-btn" class="edit-btn"><span
+														class="glyphicon glyphicon-pencil"></span></button>
+												<button id="exit-size-btn" class="exit-btn" style="display:none;"><span
+														class="glyphicon glyphicon-remove"></span></button>
+												<button id="confirm-size-btn" class="confirm-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-ok"></span></button>
+											</div>
+										</div>
+					
+
+									</div>
+									<div id="edit-right-col">
+										<h2>Shipping Address</h2>
+										<!-- Address -->
+										<div id="edit-address-container" class="edit-field">
+											<div class="label-container">
+												<p>Address</p>
+											</div>
+											<div class="input-field-container" id="address-border">
+												<p id="edit-address"></p>
+												<input id="address-input" type="text" class="form-control"
+													style="display:none;">
+											</div>
+											<div class="button-container">
+												<button id="edit-address-btn" class="edit-btn"><span
+														class="glyphicon glyphicon-pencil"></span></button>
+												<button id="exit-address-btn" class="exit-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-remove"></span></button>
+												<button id="confirm-address-btn" class="confirm-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-ok"></span></button>
+											</div>
+										</div>
+										<!-- STATE -->
+										<div class="edit-field">
+											<div class="label-container">
+												<p>State</p>
+											</div>
+											<div class="input-field-container" id="state-border">
+												<p id="edit-state"></p>
+												<select id="state-input" class="form-control" style="display:none;">
+													<option selected>Choose...</option>
+													<option value="AL">Alabama</option>
+													<option value="AK">Alaska</option>
+													<option value="AZ">Arizona</option>
+													<option value="AR">Arkansas</option>
+													<option value="CA">California</option>
+													<option value="CO">Colorado</option>
+													<option value="CT">Connecticut</option>
+													<option value="DE">Delaware</option>
+													<option value="FL">Florida</option>
+													<option value="GA">Georgia</option>
+													<option value="HI">Hawaii</option>
+													<option value="ID">Idaho</option>
+													<option value="IL">Illinois</option>
+													<option value="IN">Indiana</option>
+													<option value="IA">Iowa</option>
+													<option value="KS">Kansas</option>
+													<option value="KY">Kentucky</option>
+													<option value="LA">Louisiana</option>
+													<option value="ME">Maine</option>
+													<option value="MD">Maryland</option>
+													<option value="MA">Massachusetts</option>
+													<option value="MI">Michigan</option>
+													<option value="MN">Minnesota</option>
+													<option value="MS">Mississippi</option>
+													<option value="MO">Missouri</option>
+													<option value="MT">Montana</option>
+													<option value="NE">Nebraska</option>
+													<option value="NV">Nevada</option>
+													<option value="NH">New Hampshire</option>
+													<option value="NJ">New Jersey</option>
+													<option value="NM">New Mexico</option>
+													<option value="NY">New York</option>
+													<option value="NC">North Carolina</option>
+													<option value="ND">North Dakota</option>
+													<option value="OH">Ohio</option>
+													<option value="OK">Oklahoma</option>
+													<option value="OR">Oregon</option>
+													<option value="PA">Pennsylvania</option>
+													<option value="RI">Rhode Island</option>
+													<option value="SC">South Carolina</option>
+													<option value="SD">South Dakota</option>
+													<option value="TN">Tennessee</option>
+													<option value="TX">Texas</option>
+													<option value="UT">Utah</option>
+													<option value="VT">Vermont</option>
+													<option value="VA">Virginia</option>
+													<option value="WA">Washington</option>
+													<option value="WV">West Virginia</option>
+													<option value="WI">Wisconsin</option>
+													<option value="WY">Wyoming</option>
+												</select>
+											</div>
+											<div class="button-container">
+												<button id="edit-state-btn" class="edit-btn"><span
+														class="glyphicon glyphicon-pencil"></span></button>
+												<button id="exit-state-btn" class="exit-btn" style="display:none;"><span
+														class="glyphicon glyphicon-remove"></span></button>
+												<button id="confirm-state-btn" class="confirm-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-ok"></span></button>
+											</div>
+										</div>
+										<!-- City -->
+										<div id="edit-city-container" class="edit-field">
+											<div class="label-container">
+												<p>City</p>
+											</div>
+											<div class="input-field-container" id="city-border">
+												<p id="edit-city"></p>
+												<input id="city-input" type="text" class="form-control"
+													style="display:none;">
+											</div>
+											<div class="button-container">
+												<button id="edit-city-btn" class="edit-btn"><span
+														class="glyphicon glyphicon-pencil"></span></button>
+												<button id="exit-city-btn" class="exit-btn" style="display:none;"><span
+														class="glyphicon glyphicon-remove"></span></button>
+												<button id="confirm-city-btn" class="confirm-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-ok"></span></button>
+											</div>
+										</div>
+										<div id="edit-zip-container" class="edit-field">
+											<div class="label-container">
+												<p>Zip</p>
+											</div>
+											<div class="input-field-container" id="zip-border">
+												<p id="edit-zip"></p>
+												<input id="zip-input" type="text" class="form-control"
+													style="display:none;">
+											</div>
+											<div class="button-container">
+												<button id="edit-zip-btn" class="edit-btn"><span
+														class="glyphicon glyphicon-pencil"></span></button>
+												<button id="exit-zip-btn" class="exit-btn" style="display:none;"><span
+														class="glyphicon glyphicon-remove"></span></button>
+												<button id="confirm-zip-btn" class="confirm-btn"
+													style="display:none;"><span
+														class="glyphicon glyphicon-ok"></span></button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div id="buyer-footer-container">
+
+					</div>
+				</div>
 			</div>
 
 			<!-- Right Column Container -->
@@ -82,27 +365,7 @@
 		</div>
 	</div>
 
-	<!-- class for actual profile -->
-
-	<div class="wrapper">
-		<div class="left">
-			<img src="..\assets\images\profilepic.png" 
-			alt="user" width="100">
-			<h4>Test Account</h4>
-			 <p>BUYER</p>
-		</div>
-		<div class="right">
-			<div class="info">
-			
-
-			</div>
-		  
-		</div>
-	</div>
-
-	<!-- Footer -->
-	<footer class="container-fluid text-center">
-	</footer>
-
+	<script src="../js/s-to-b-profile.js"></script>
 </body>
+
 </html>

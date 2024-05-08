@@ -31,7 +31,7 @@
     width:225%;
     height: 4em;
 }
-#brand-title{ 
+#brand-title{  
     font-size: 600%;
     font-family: 'Bebas Neue';
     font-stretch: ultra-expanded;
@@ -42,17 +42,38 @@
 #brand-title:hover{
     text-shadow: 3px 3px 3px #424242;
 }
-
-#login-btn{ 
-    font-size:2em;
-    transform: translateY(40%);
-    color:#cfcfcf;
-    background-color: transparent;
-}
-
-#login-btn:hover {
+#login-link:hover,
+#logout-link:hover,
+#buyer-link:hover  {
     text-shadow: 3px 3px 3px #424242;
 }
+
+#login-link,
+#logout-link,
+#buyer-link {
+    font-size: 2em;
+    color: #cfcfcf;
+    background-color: transparent;
+    transform: translateY(50%);
+}
+
+#logout-link {
+    transform: translateY(110%);
+    border: 0;
+}
+
+#buyer-link {
+    font-size: 3em;
+    transform: translateY(40%);
+    padding-right: 0.7em;
+}
+#navbar-profilepic{
+  transform: translateY(15%);
+  border:4px solid #4d4d4d;
+  border-radius:50%;
+  height:4.5em;
+}
+
 
 /* ============ Side Column Elements ============ */
 .sidenav {
@@ -143,7 +164,7 @@
     position:absolute;
     top:2%;
     left:2%;
-    border: 3px solid #4c4c4c;
+    border: 3px solid #79e965;
     background-color:#363636;
     border-radius:10%;
     height:15%;
@@ -163,7 +184,7 @@
 }
 #size-container{  
     position:absolute;
-    border: 3px solid #4c4c4c;
+    border: 3px solid #fcbf1c;
     background-color:#363636;
     
     border-radius:10%;
@@ -177,6 +198,8 @@
 }
 #size{
     color:#fcbf1c;
+    -webkit-text-stroke-width: .2px;  
+    -webkit-text-stroke-color: #cd9f26; 
     font-size:1.8em; 
     font-family: "Freeman", sans-serif;
     position:relative;
@@ -188,28 +211,40 @@
     padding-top: 2.5%;
     font-size: 300%;
     font-family: 'Bebas Neue';
+    -webkit-text-stroke-width: 0.5px;  
+    -webkit-text-stroke-color: #cd9f26; 
     color: #fcbf1c;
 }
-
 /* Elements of #info-container */
-#listing-name{
-    position:relative; 
-    left:5%;
-    top:5%;
-    width:25%;
+#listing-name {
+    position: relative;
+    text-align: center;
+    top: 5%;
+    width: 25%;
     font-size: 225%;
     font-family: 'Bebas Neue';
-}
-#listing-sh-desc{
-    position:relative;
-    top:5%;
-    right:0;
-    width:75%;
-    font-size: 200%;
-    color:#cecece;
-    font-family: 'Bebas Neue';
+
 }
 
+#listing-name a {
+    color: #1267db;
+    text-decoration: none;
+}
+
+#listing-name a:hover {
+    color: #62a5ff;
+    text-decoration: none;
+}
+
+#listing-sh-desc {
+    position: relative;
+    top: 5%;
+    right: 0;
+    width: 75%;
+    font-size: 200%;
+    color: #cecece;
+    font-family: 'Bebas Neue';
+}
 /* Other (Absolute) Elements */
 #listing-like{
     position:absolute;
@@ -239,7 +274,23 @@
 #listing-checkout:hover{
     color:white;
 }
-
+.delete-btns{
+    position:absolute;
+    color: #c42525;
+    background-color:transparent;
+    padding:10px;
+    font-size:120%;
+    border-radius:10%;
+    border: 3px solid #c42525;
+    background-color:#151515;
+    bottom:3%;
+    left:2.5%;
+    font-family: "Freeman", sans-serif;
+  }
+  .delete-btns:hover{
+    color:red;
+    border-color:red;
+  }
 /* ============ Responsive Adaptations ============ */
 
 /* Adapt to Minimal Screens */
