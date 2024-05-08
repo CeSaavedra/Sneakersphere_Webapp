@@ -1,7 +1,7 @@
 // Get the form element
 let form = document.getElementById('register-form');
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
   // Prevent the default form submission behavior
   e.preventDefault();
 
@@ -18,7 +18,8 @@ form.addEventListener('submit', function(e) {
     zipCode: form.elements['register-zip'].value,
     phoneNumber: form.elements['register-phone'].value,
     birthday: form.elements['register-birthday'].value,
-    gender: form.elements['register-gender'].value
+    gender: form.elements['register-gender'].value,
+    profileImage: "../assets/images/profilepic.png"
   };
 
   // Sends a POST request
@@ -29,12 +30,14 @@ form.addEventListener('submit', function(e) {
     },
     body: JSON.stringify(formData)
   })
-  .then(response => response.json())
-  .then(data => {
+    .then(response => response.json())
+    .then(data => {
 
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+      console.log(data);
+    })
+    .finally(() => {
+      setTimeout(function () {
+        window.location.href = 'profile.html'; // Redirect to 'profile.html' after 5 seconds
+      }, 5000);
+    });
 });

@@ -4,7 +4,11 @@
     font-weight: 400;
     font-style: normal;
 }
-
+.freeman-regular {
+  font-family: "Freeman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 .oswald-font {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
@@ -49,14 +53,36 @@
     text-shadow: 3px 3px 3px #424242;
 }
 
-#login-btn{ 
-    font-size:2em;
-    transform: translateY(40%);
-    color:#cfcfcf;
-    background-color: transparent;
-}
-#login-btn:hover {
+#login-link:hover,
+#logout-link:hover,
+#buyer-link:hover  {
     text-shadow: 3px 3px 3px #424242;
+}
+
+#login-link,
+#logout-link,
+#buyer-link {
+    font-size: 2em;
+    color: #cfcfcf;
+    background-color: transparent;
+    transform: translateY(50%);
+}
+
+#logout-link {
+    transform: translateY(110%);
+    border: 0;
+}
+
+#buyer-link {
+    font-size: 3em;
+    transform: translateY(40%);
+    padding-right: 0.7em;
+}
+#navbar-profilepic{
+  transform: translateY(15%);
+  border:4px solid #4d4d4d;
+  border-radius:50%;
+  height:4.5em;
 }
 
 /* ============ Side Column Elements ============ */
@@ -232,16 +258,14 @@
 #image-preview-container{
   position:relative;
   height:100%;
-  width:40%;
-  padding:2%;
-
-  font-size:150%;
-  font-family: "Poppins", sans-serif;
-
+  width:auto;
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  justify-content:center;
 }
 #preview-image{
   object-fit:contain;
-  width:80%;
   height:auto;    
   max-height:100%;
   max-width:100%;
@@ -249,7 +273,7 @@
   border: 4px solid #4d4d4d;
 }
 
-#file-input-container{
+#url-input-container{
   position:relative;
   height:100%;
   width:60%;
@@ -279,6 +303,7 @@
   text-overflow: ellipsis;
   align-items:center;
   text-align:left;
+  color:black;
 }
 
 /* ===== Class Elements ===== */
@@ -341,6 +366,14 @@
   border: 1px solid #212121;
   color:white;
 }
+.input-field-container select{
+  width:95%;
+  height:70%;
+  border-radius:5%;
+  background-color:#363636;
+  border: 1px solid #212121;
+  color:white;
+}
 .exit-btn{
   background-color:transparent;
   border: 0;
@@ -380,7 +413,7 @@
   justify-content:space-evenly;
 }
 
-.profile-nav-btn{
+.nav-btn{
   position:relative;
   height:100%;
 
@@ -537,6 +570,19 @@
   justify-content:center;
   align-items:center;
 }
+#price-container{  
+  position:absolute;
+  top:2%;
+  left:2%;
+  border: 3px solid #79e965;
+  background-color:#363636;
+  border-radius:10%;
+  height:15%;
+  width:15%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 #price{
   color: #79e965;
   font-family: "Freeman", sans-serif;
@@ -548,7 +594,7 @@
 }
 #size-container{  
   position:absolute;
-  border: 3px solid #4c4c4c;
+  border: 3px solid #fcbf1c;
   background-color:#363636;
   
   border-radius:10%;
@@ -562,6 +608,8 @@
 }
 #size{
   color:#fcbf1c;
+  -webkit-text-stroke-width: .2px;  
+  -webkit-text-stroke-color: #cd9f26; 
   font-size:1.8em; 
   font-family: "Freeman", sans-serif;
   position:relative;
@@ -578,13 +626,24 @@
 
 /* Elements of #info-container */
 #listing-name{
-  position:relative; 
-  left:5%;
+  position:relative;
+  text-align:center; 
   top:5%;
   width:25%;
   font-size: 225%;
   font-family: 'Bebas Neue';
 }
+
+#listing-name a{
+  color:#1267db;
+  text-decoration:none;
+}
+
+#listing-name a:hover{
+  color:#62a5ff;
+  text-decoration:none;
+}
+
 #listing-sh-desc{
   position:relative;
   top:5%;
@@ -624,6 +683,24 @@
 #listing-checkout:hover{
   color:white;
 }
+.delete-btns{
+  position:absolute;
+  color: #c42525;
+  background-color:transparent;
+  padding:10px;
+  font-size:120%;
+  border-radius:10%;
+  border: 3px solid #c42525;
+  background-color:#151515;
+  bottom:3%;
+  left:2.5%;
+  font-family: "Freeman", sans-serif;
+}
+.delete-btns:hover{
+  color:red;
+  border-color:red;
+}
+
 /* ============ Responsive Adaptations ============ */
 
 /* Adapt to Minimal Screens */
