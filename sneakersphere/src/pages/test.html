@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- Displayed on Browser Tab -->
+	<title>SneakerSphere</title>
+	<link rel="icon" href="..\assets\images\ss_logo.PNG">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Plugs in Custom Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+	<!-- Defines CSS Stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/test.css">
+
+
+	<!-- Defines Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Defines Navbar -->
+	<nav class="navbar">
+		<!-- Allows container fluidity (Spans full width) -->
+		<div class="container-fluid">
+			<!-- Navbar Header Elements -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">
+					<img class="navbar-brand" id="logo" src="..\assets\images\ss_logo.PNG"></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<span>
+							<a href="index.html" class="navbar-brand mt-1" id="brand-title">
+								SneakerSphere
+							</a>
+						</span>
+					</li>
+					<li>
+						<form class="navbar-form navbar-left" role="search">
+							<div class="form-group">
+								<input type="text" id="search-bar" class="form-control"
+									placeholder="Explore our Sneakers">
+							</div>
+						</form>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a id="login-btn" href="/sneakersphere/src/pages/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Contains all content under Navbar -->
+	<div class="container-fluid text-center">
+		<div id="content" class="row content">
+
+			<!-- Left Column Container -->
+			<div class="col-sm-2 sidenav">
+			</div>
+
+			<!-- Center Column Container -->
+			<div id="content-col" class="col-sm-8 text-left">
+				<div id="checkout-container">
+					<div id="left-column-container">
+						<img src="..\assets\images\jordans.png" 
+			alt="user" width="350">
+            <p>Subtotal</p>
+			<p>US$ 17.77</p>
+			 <h4>Total to pay</h4>
+             <h4>US$ 17.77</h4>
+			</div>
+
+            <div id="right-column-container">
+                <div id="checkout-title-container">
+                    
+                </div>
+
+                <div id="checkout-listings-container">
+                    <h6>Payment</h6>
+
+                    <div class="row">
+
+                    <div class="column">
+                    <h5 for="login-email">Cardholder Name</h5>
+                    <input type="text" id="Name" name="Name">
+                </div>
+                <div class="column">
+                    <h5 for="login-email">Postal Code</h5>
+                    <input type="text" id="Name" name="Name">
+                </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="column">
+                    <h5 for="login-email">Card Number</h5>
+                    <input type="text" id="Name" name="Name">
+                </div>
+                <div class="column">
+                    <h5 for="login-email">Experation</h5>
+                    <input type="text" id="Name" name="Name">
+                </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="column">
+                    <h5 for="login-email">CVV</h5>
+                    <input type="text" id="Name" name="Name">
+                </div>
+                <div class="column">
+                    <li><a id="login-btn" href="/sneakersphere/src/index.html"><span class="glyphicon glyphicon-log-in"></span> PAY Now</a></li>
+                </div>
+                </div>
+
+        
+
+
+                </div>
+                <div id="checkout-footer-container">
+                    
+                </div>
+            </div>>
+        </div>
+    </div>
+
+	<!-- class for actual profile -->
+
+	<!-- Footer -->
+	<footer class="container-fluid text-center">
+	</footer>
+
+</body>
+</html>
