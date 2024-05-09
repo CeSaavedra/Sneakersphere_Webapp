@@ -1,11 +1,12 @@
-// Get the form element
+// Stores the form by ID into form
 let form = document.getElementById('register-form');
 
+// If submit button has been clicked (Within Form)
 form.addEventListener('submit', function(e) {
-  // Prevent the default form submission behavior
+  
   e.preventDefault();
 
-  // Capture the form data
+  // Capture form data
   let formData = {
     email: form.elements['register-email'].value,
     userName: form.elements['register-username'].value,
@@ -17,7 +18,7 @@ form.addEventListener('submit', function(e) {
     shoeSize: form.elements['register-shoe-size'].value
   };
 
-  // Sends a POST request
+  // CreateBuyer API Endpoint used - Creates new buyer object
   fetch('http://18.232.147.203:3300/CreateBuyer/', {
     method: 'POST',
     headers: {
@@ -35,8 +36,9 @@ form.addEventListener('submit', function(e) {
     console.error('Error:', error);
   })
   .finally(() => {
-    setTimeout(function() {
-      window.location.href = 's-to-b-profile.html'; // Redirect to 'profile.html' after 5 seconds
-    }, 5000);
+    setTimeout(function () {
+      // After 1 second - Goes to login page
+      window.location.href = 'login.html'; 
+    }, 1000);
   });
 });

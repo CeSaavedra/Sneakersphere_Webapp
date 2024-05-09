@@ -1,17 +1,18 @@
+// ===== Gets Seller ID from Session Storage =====
 var sellerId = sessionStorage.getItem('sellerId');
-console.log(sellerId);
+// ===== Gets Buyer ID from Session Storage =====
 var buyerId = sessionStorage.getItem('buyerId');
-console.log(buyerId);
 
-// Get the listings container
+
+
+// Listing Containers 
 const listings = document.getElementById('content-col');
-// Get the link element
 const link = document.getElementById('profile-link');
 
-// Initialize an array to store the slideIndex for each post
+// Listing Images Array
 let slideIndices = [];
 
-// Increment the slideIndex by n and display the new slide
+// Increments slideIndex by n (Display new slide)
 function plusDivs(n, postIndex) {
   showDivs(slideIndices[postIndex] += n, postIndex);
 }
@@ -19,38 +20,36 @@ function plusDivs(n, postIndex) {
 // Display the slide at slideIndex and hide all other slides
 function showDivs(n, postIndex) {
   var i;
-  var x = document.getElementsByClassName(`mySlides${postIndex}`); // Get all slides for this post
+  var x = document.getElementsByClassName(`mySlides${postIndex}`); 
   if (n >= x.length) { slideIndices[postIndex] = 0 }
   if (n < 0) { slideIndices[postIndex] = x.length - 1 }
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; // Hide all slides
+    x[i].style.display = "none"; 
   }
-  x[slideIndices[postIndex]].style.display = "block"; // Display current slide
+  x[slideIndices[postIndex]].style.display = "block"; 
 }
 
-// Fetch the sneaker posts from the server
+// sneakerposts API Endpoint - Displays ALL post objects ==============
 fetch('http://18.232.147.203:3300/sneakerposts')
   .then(response => response.json())
   .then(posts => {
-    // Loop through each post
+
     posts.forEach((post, postIndex) => {
       let username = '';
 
-      // Fetch the username for the seller ID
+      // Fetch Username for Each Post
       fetch(`http://18.232.147.203:3300/GetSellerUsername/${post.sellerid}`)
         .then(response => response.json())
         .then(seller => {
           username = seller[0].userName;
         })
         .then(() => {
-          // Initialize slide index for this post
+          
           slideIndices[postIndex] = 0;
-
-          // Create a new listing container
           const listingContainer = document.createElement('div');
           listingContainer.className = 'row my-3 py-3';
 
-          // Add the HTML for the listing
+          // Replicating Listing Container Created with Post Data
           listingContainer.innerHTML = `
             <div id="listing-main-container" class="col">
               <div id="listing-title-container">
@@ -79,10 +78,10 @@ fetch('http://18.232.147.203:3300/sneakerposts')
               <a id="listing-like" href="#"><span class="glyphicon glyphicon-heart"></span></a>
             </div>`;
 
-          // Add the new listing container to the listings container
+          // Inserts listing
           listings.appendChild(listingContainer);
 
-          // Add event listener to the delete button
+          // Displays Delete button ONLY if the Seller logged in has posts on that page
           if (post.sellerid === sellerId) {
             document.getElementById(`listing-delete-${post.postid}`).addEventListener('click', function () {
               fetch(`http://18.232.147.203:3300/sneakerposts/${post.postid}`, {
@@ -101,8 +100,9 @@ fetch('http://18.232.147.203:3300/sneakerposts')
             });
           }
 
-          // Show the first slide
+          // Initializes it to display 
           showDivs(slideIndices[postIndex], postIndex);
+
         })
         .catch(error => console.error('Error:', error));
     });
@@ -110,12 +110,14 @@ fetch('http://18.232.147.203:3300/sneakerposts')
   .catch(error => console.error('Error:', error));
 
 // ================== EVENT LISTENERS ==================
+
+// If Logout is clicked, Logs out
 document.getElementById('logout-link').addEventListener('click', function () {
   sessionStorage.clear();
   location.reload();
 });
 
-
+// If Buyer is logged in, Display necessary NavBar elements
 if (buyerId !== null) {
   console.log('Buyer Logged In');
   document.getElementById("login-link").style.display = "none";
@@ -124,7 +126,7 @@ if (buyerId !== null) {
   document.getElementById("logout-link").style.display = "inline-block";
 }
 
-
+// If Seller is logged in, Display necessary NavBar elements
 if (sellerId !== null) {
 
   document.getElementById("login-link").style.display = "none";
@@ -135,7 +137,7 @@ if (sellerId !== null) {
   fetch(`http://18.232.147.203:3300/GetSellerProfileImage/${sellerId}`)
     .then(response => response.json())
     .then(data => {
-      // Update the src attribute of the img tag
+
       document.getElementById('navbar-profilepic').src = data[0].profileImage;
     })
     .catch(error => console.error('Error:', error));

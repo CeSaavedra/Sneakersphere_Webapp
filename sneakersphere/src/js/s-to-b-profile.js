@@ -3,14 +3,12 @@ console.log(buyerId);
 
 document.getElementById('likes-btn').style.backgroundColor = '#696969';
 
-// Fetch the seller's email
 fetch(`http://18.232.147.203:3300/GetBuyerEmail/${buyerId}`)
     .then(response => response.json())
     .then(data => {
         console.log('Email:', data[0].email);
         email = data[0].email;
 
-        // Fetch the seller's password
         return fetch(`http://18.232.147.203:3300/GetBuyerPass/${buyerId}`);
     })
     .then(response => response.json())
@@ -18,15 +16,12 @@ fetch(`http://18.232.147.203:3300/GetBuyerEmail/${buyerId}`)
         console.log('Password:', data[0].password);
         password = data[0].password;
 
-        // Fetch user data from the server
         return fetch(`http://18.232.147.203:3300/GetBuyer/${email}&${password}`);
     })
     .then(response => response.json())
     .then(data => {
-        // Use first item in the data array
         const buyer = Array.isArray(data) ? data[0] : data;
 
-        // Replace Text Elements using values from the given JSON object
         document.getElementById('buyer-username').textContent = buyer.userName;
 
 
@@ -38,7 +33,6 @@ fetch(`http://18.232.147.203:3300/GetBuyerEmail/${buyerId}`)
         document.getElementById('edit-state').textContent = buyer.state;
         document.getElementById('edit-size').textContent = buyer.shoeSize;
 
-        //document.getElementById("nav-edit-container").style.display = "block";
     })
     .catch(error => {
         console.error('Error:', error);
@@ -56,7 +50,6 @@ if(buyerId !== null){
 
 // ================== EVENT LISTENERS ==================
 
-// Refreshes Page using Refresh button
 document.getElementById('refresh-btn').addEventListener('click', function () {
     location.reload();
   });
@@ -64,12 +57,11 @@ document.getElementById('refresh-btn').addEventListener('click', function () {
     sessionStorage.clear(); 
     window.location.href = '../index.html'; 
   });
-// Get the containers
+
 var likedContainer = document.getElementById('liked-container');
 var orderContainer = document.getElementById('order-container');
 var editContainer = document.getElementById('edit-container');
 
-// Add event listeners to the buttons
 document.getElementById('likes-btn').addEventListener('click', function () {
     document.getElementById('liked-container').style.display = 'block';
     document.getElementById('order-container').style.display = 'none';
@@ -137,10 +129,8 @@ document.querySelector("#confirm-email-btn").addEventListener("click", function 
     document.getElementById("edit-email").style.display = "inline-block";
     document.getElementById("email-border").style.border = "2px solid #303030";
 
-    // Get the first name from the input field
     var email = document.getElementById("email-input").value;
 
-    // Send a PUT request to the SetSellerFname API
     fetch(`http://18.232.147.203:3300/SetBuyerEmail/${buyerId}`, {
         method: 'PUT',
         headers: {
@@ -187,10 +177,8 @@ document.querySelector("#confirm-username-btn").addEventListener("click", functi
     document.getElementById("edit-username").style.display = "inline-block";
     document.getElementById("username-border").style.border = "2px solid #303030";
 
-    // Get the first name from the input field
     var userName = document.getElementById("username-input").value;
 
-    // Send a PUT request to the SetSellerFname API
     fetch(`http://18.232.147.203:3300/SetBuyerUsername/${buyerId}`, {
         method: 'PUT',
         headers: {
@@ -238,10 +226,8 @@ document.querySelector("#confirm-username-btn").addEventListener("click", functi
     document.getElementById("edit-username").style.display = "inline-block";
     document.getElementById("username-border").style.border = "2px solid #303030";
 
-    // Get the first name from the input field
     var userName = document.getElementById("username-input").value;
 
-    // Send a PUT request to the SetSellerFname API
     fetch(`http://18.232.147.203:3300/SetBuyerUsername/${buyerId}`, {
         method: 'PUT',
         headers: {
@@ -289,10 +275,8 @@ document.querySelector("#confirm-size-btn").addEventListener("click", function (
     document.getElementById("edit-size").style.display = "inline-block";
     document.getElementById("size-border").style.border = "2px solid #303030";
 
-    // Get the first name from the input field
     var shoeSize = document.getElementById("size-input").value;
 
-    // Send a PUT request to the SetSellerFname API
     fetch(`http://18.232.147.203:3300/SetBuyerShoeSize/${buyerId}`, {
         method: 'PUT',
         headers: {
@@ -339,10 +323,8 @@ document.querySelector("#confirm-address-btn").addEventListener("click", functio
     document.getElementById("edit-address").style.display = "inline-block";
     document.getElementById("address-border").style.border = "2px solid #303030";
 
-    // Get the first name from the input field
     var streetAddress = document.getElementById("address-input").value;
 
-    // Send a PUT request to the SetSellerFname API
     fetch(`http://18.232.147.203:3300/SetBuyerAddress/${buyerId}`, {
         method: 'PUT',
         headers: {
@@ -390,10 +372,8 @@ document.querySelector("#confirm-state-btn").addEventListener("click", function 
     document.getElementById("edit-state").style.display = "inline-block";
     document.getElementById("state-border").style.border = "2px solid #303030";
 
-    // Get the first name from the input field
     var state = document.getElementById("state-input").value;
 
-    // Send a PUT request to the SetSellerFname API
     fetch(`http://18.232.147.203:3300/SetBuyerState/${buyerId}`, {
         method: 'PUT',
         headers: {
@@ -440,10 +420,8 @@ document.querySelector("#confirm-city-btn").addEventListener("click", function (
     document.getElementById("edit-city").style.display = "inline-block";
     document.getElementById("city-border").style.border = "2px solid #303030";
 
-    // Get the first name from the input field
     var city = document.getElementById("city-input").value;
 
-    // Send a PUT request to the SetSellerFname API
     fetch(`http://18.232.147.203:3300/SetBuyerCity/${buyerId}`, {
         method: 'PUT',
         headers: {
@@ -490,10 +468,8 @@ document.querySelector("#confirm-zip-btn").addEventListener("click", function (e
     document.getElementById("edit-zip").style.display = "inline-block";
     document.getElementById("zip-border").style.border = "2px solid #303030";
 
-    // Get the first name from the input field
     var zipCode = document.getElementById("zip-input").value;
 
-    // Send a PUT request to the SetSellerFname API
     fetch(`http://18.232.147.203:3300/SetBuyerZip/${buyerId}`, {
         method: 'PUT',
         headers: {

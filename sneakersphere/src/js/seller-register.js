@@ -2,10 +2,8 @@
 let form = document.getElementById('register-form');
 
 form.addEventListener('submit', function (e) {
-  // Prevent the default form submission behavior
   e.preventDefault();
 
-  // Capture the form data
   let formData = {
     email: form.elements['register-email'].value,
     userName: form.elements['register-username'].value,
@@ -22,7 +20,6 @@ form.addEventListener('submit', function (e) {
     profileImage: "../assets/images/profilepic.png"
   };
 
-  // Sends a POST request
   fetch('http://18.232.147.203:3300/CreateSeller/', {
     method: 'POST',
     headers: {
@@ -37,7 +34,7 @@ form.addEventListener('submit', function (e) {
     })
     .finally(() => {
       setTimeout(function () {
-        window.location.href = 'profile.html'; // Redirect to 'profile.html' after 5 seconds
-      }, 5000);
+        window.location.href = 'login.html'; 
+      }, 1000);
     });
 });

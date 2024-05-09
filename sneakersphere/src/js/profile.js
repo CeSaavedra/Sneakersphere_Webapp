@@ -1,38 +1,39 @@
-// Get the current URL
+// Stores current URL in url
 let url = new URL(window.location.href);
+
+// Initializes edit button to be not displayed
 document.getElementById("nav-edit-container").style.display = "none";
 
+// ===== Gets Buyer ID from Session Storage =====
 var buyerId = sessionStorage.getItem('buyerId');
 console.log(buyerId);
 var sellerId = sessionStorage.getItem('sellerId');
 
-// Use URLSearchParams interface to work with the query string
+// Allows SellerID to be retrieved from URL
 let params = new URLSearchParams(url.search);
-
-// Get the sellerid from the query string
 let targetSellerId = params.get('sellerid');
 
-console.log("Session ID:" + sellerId);
-console.log("Target ID:" + targetSellerId);
-
+// If seller is logged in
 if (sellerId !== null) {
 
+  // Displays necessary navbar containers
   document.getElementById("profilepic-link").style.display = "block";
   document.getElementById("logout-link").style.display = "inline-block";
   document.getElementById("login-link").style.display = "none";
 
+  // GetSellerProfileImage API Endpoint given SellerID - Gets Profile picture
   fetch(`http://18.232.147.203:3300/GetSellerProfileImage/${sellerId}`)
     .then(response => response.json())
     .then(data => {
-      // Update the src attribute of the img tag
       document.getElementById('navbar-profilepic').src = data[0].profileImage;
     })
     .catch(error => console.error('Error:', error));
 }
 
+// If profile was NOT navigated to by post UI AND
+// If Seller did not navigate to their own post through post UI
 if (targetSellerId !== null && targetSellerId !== sellerId) {
-  console.log('1');
-  // Fetch the seller's data from each endpoint
+
   Promise.all([
     fetch(`http://18.232.147.203:3300/GetSellerUsername/${targetSellerId}`).then(response => response.json()),
     fetch(`http://18.232.147.203:3300/GetSellerFname/${targetSellerId}`).then(response => response.json()),
@@ -55,15 +56,15 @@ if (targetSellerId !== null && targetSellerId !== sellerId) {
       document.getElementById('profilepic').src = obj.profileImage;
     });
 } else {
-  console.log('2');
-  // Fetch the seller's email
+  
+  // GetSellerEmail API Endpoint given SellerID - Gets Profile picture
   fetch(`http://18.232.147.203:3300/GetSellerEmail/${sellerId}`)
     .then(response => response.json())
     .then(data => {
       console.log('Email:', data[0].email);
       email = data[0].email;
 
-      // Fetch the seller's password
+      // GetSellerPass API Endpoint given SellerID - Gets Password
       return fetch(`http://18.232.147.203:3300/GetSellerPass/${sellerId}`);
     })
     .then(response => response.json())
@@ -71,15 +72,15 @@ if (targetSellerId !== null && targetSellerId !== sellerId) {
       console.log('Password:', data[0].password);
       password = data[0].password;
 
-      // Fetch user data from the server
+      // GetSeller API Endpoint given Email and Password - Gets Seller Object
       return fetch(`http://18.232.147.203:3300/GetSeller/${email}&${password}`);
     })
     .then(response => response.json())
     .then(data => {
-      // Use first item in the data array
+      // Seller is within an array with a single object - Retrieves that object
       const seller = Array.isArray(data) ? data[0] : data;
 
-      // Replace Text Elements using values from the given JSON object
+      // Replace Text Elements using values from Seller object
       document.getElementById('username').textContent = seller.userName;
       document.getElementById('first-name').textContent = seller.firstName;
       document.getElementById('last-name').textContent = seller.lastName;
@@ -100,7 +101,7 @@ if (targetSellerId !== null && targetSellerId !== sellerId) {
 
       document.getElementById("nav-edit-container").style.display = "block";
 
-      // Fetch the seller's profile image
+      // GetSellerProfileImage API Endpoint given SellerID - Gets Seller Profile Pic
       return fetch(`http://18.232.147.203:3300/GetSellerProfileImage/${sellerId}`);
     })
     .then(response => response.json())
@@ -113,6 +114,7 @@ if (targetSellerId !== null && targetSellerId !== sellerId) {
     });
 }
 
+// Removes default form behavior from both forms
 document.querySelector("#acc-form").addEventListener("submit", function (e) {
   e.preventDefault();
 });
@@ -127,15 +129,14 @@ var inputImage = document.getElementById('input-image');
 var submitImage = document.getElementById('submit-image');
 var previewImage = document.getElementById('preview-image');
 
-// Add an event listener to the submit button
+
 submitImage.addEventListener('click', function () {
-  // Get the image URL from the input
+ 
   var imageURL = inputImage.value;
 
-  // Update the preview image source
+  
   previewImage.src = imageURL;
 
-  // Fetch the seller's profile image from the server
   fetch(`http://18.232.147.203:3300/SetSellerProfileImage/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -170,7 +171,7 @@ document.getElementById('logout-link').addEventListener('click', function () {
   window.location.href = '../index.html';
 });
 
-// Navigates to Edit Account UI
+
 document.getElementById('nav-edit-btn').addEventListener('click', function () {
   var profileContainer = document.getElementById('profile-container');
   var editContainer = document.getElementById('edit-container');
@@ -184,12 +185,12 @@ document.getElementById('nav-edit-btn').addEventListener('click', function () {
   }
 });
 
-// Refreshes Page using Refresh button
+
 document.getElementById('refresh-data-btn').addEventListener('click', function () {
   location.reload();
 });
 
-// Navigates to Main Account UI
+
 document.getElementById('back-btn').addEventListener('click', function () {
   var profileContainer = document.getElementById('profile-container');
   var editContainer = document.getElementById('edit-container');
@@ -203,7 +204,6 @@ document.getElementById('back-btn').addEventListener('click', function () {
   }
 });
 
-// Navigates to Post Creation Page
 document.getElementById('nav-post-btn').addEventListener('click', function () {
   window.location.href = 'create-post.html';
 });
@@ -211,24 +211,22 @@ document.getElementById('nav-post-btn').addEventListener('click', function () {
 
 // ================== Image Navigation for Listings ==================
 
-var slideIndex = 0; // Start at first slide
-showDivs(slideIndex); // Display first slide
+var slideIndex = 0; 
+showDivs(slideIndex);
 
-// Increment the slideIndex by n and display the new slide
 function plusDivs(n) {
   showDivs(slideIndex += n);
 }
 
-// Display the slide at slideIndex and hide all other slides
 function showDivs(n) {
   var i;
-  var x = document.getElementsByClassName("mySlides"); // Get all slides
+  var x = document.getElementsByClassName("mySlides");
   if (n >= x.length) { slideIndex = 0 }
   if (n < 0) { slideIndex = x.length - 1 }
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; // Hide all slides
+    x[i].style.display = "none";
   }
-  x[slideIndex].style.display = "block"; // Display current slide
+  x[slideIndex].style.display = "block"; 
 }
 
 // ================== Button Navigation for USERNAME ==================
@@ -264,10 +262,8 @@ document.querySelector("#confirm-username-btn").addEventListener("click", functi
   document.getElementById("edit-username").style.display = "inline-block";
   document.getElementById("username-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var userName = document.getElementById("username-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerUsername/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -313,10 +309,8 @@ document.querySelector("#confirm-first-btn").addEventListener("click", function 
   document.getElementById("edit-first-name").style.display = "inline-block";
   document.getElementById("first-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var firstName = document.getElementById("first-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerFname/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -362,10 +356,9 @@ document.querySelector("#confirm-last-btn").addEventListener("click", function (
   document.getElementById("edit-last-name").style.display = "inline-block";
   document.getElementById("last-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var lastName = document.getElementById("last-input").value;
 
-  // Send a PUT request to the SetSellerFname API
+
   fetch(`http://18.232.147.203:3300/SetSellerLname/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -414,10 +407,9 @@ document.querySelector("#confirm-bio-btn").addEventListener("click", function (e
   document.getElementById("edit-bio").style.display = "inline-block";
   document.getElementById("bio-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var bio = document.getElementById("bio-input").value;
 
-  // Send a PUT request to the SetSellerFname API
+
   fetch(`http://18.232.147.203:3300/SetSellerBio/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -464,10 +456,8 @@ document.querySelector("#confirm-email-btn").addEventListener("click", function 
   document.getElementById("edit-email").style.display = "inline-block";
   document.getElementById("email-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var email = document.getElementById("email-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerEmail/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -515,10 +505,8 @@ document.querySelector("#confirm-birthday-btn").addEventListener("click", functi
   document.getElementById("edit-birthday").style.display = "inline-block";
   document.getElementById("birthday-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var birthday = document.getElementById("birthday-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerBDay/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -566,10 +554,8 @@ document.querySelector("#confirm-address-btn").addEventListener("click", functio
   document.getElementById("edit-address").style.display = "inline-block";
   document.getElementById("address-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var address = document.getElementById("address-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerAddress/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -617,10 +603,8 @@ document.querySelector("#confirm-city-btn").addEventListener("click", function (
   document.getElementById("edit-city").style.display = "inline-block";
   document.getElementById("city-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var city = document.getElementById("city-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerCity/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -668,10 +652,8 @@ document.querySelector("#confirm-gender-btn").addEventListener("click", function
   document.getElementById("edit-gender").style.display = "inline-block";
   document.getElementById("gender-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var gender = document.getElementById("gender-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerGender/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -718,10 +700,8 @@ document.querySelector("#confirm-zip-btn").addEventListener("click", function (e
   document.getElementById("edit-zip").style.display = "inline-block";
   document.getElementById("zip-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var zipCode = document.getElementById("zip-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerZip/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -768,10 +748,8 @@ document.querySelector("#confirm-state-btn").addEventListener("click", function 
   document.getElementById("edit-state").style.display = "inline-block";
   document.getElementById("state-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var state = document.getElementById("state-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerState/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -818,10 +796,8 @@ document.querySelector("#confirm-number-btn").addEventListener("click", function
   document.getElementById("edit-number").style.display = "inline-block";
   document.getElementById("number-border").style.border = "1.5px solid #3b3b3b";
 
-  // Get the first name from the input field
   var phoneNumber = document.getElementById("number-input").value;
 
-  // Send a PUT request to the SetSellerFname API
   fetch(`http://18.232.147.203:3300/SetSellerPhone/${sellerId}`, {
     method: 'PUT',
     headers: {
@@ -838,47 +814,41 @@ document.querySelector("#confirm-number-btn").addEventListener("click", function
 
 
 if (targetSellerId == null || targetSellerId == sellerId) {
-  // Initialize an array to store the slideIndex for each post
   let slideIndices = [];
 
-  // Increment the slideIndex by n and display the new slide
   function plusDivs(n, postIndex) {
     showDivs(slideIndices[postIndex] += n, postIndex);
   }
 
-  // Display the slide at slideIndex and hide all other slides
   function showDivs(n, postIndex) {
     var i;
-    var x = document.getElementsByClassName(`mySlides${postIndex}`); // Get all slides for this post
+    var x = document.getElementsByClassName(`mySlides${postIndex}`);
     if (n >= x.length) { slideIndices[postIndex] = 0 }
     if (n < 0) { slideIndices[postIndex] = x.length - 1 }
     for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; // Hide all slides
+      x[i].style.display = "none"; 
     }
-    x[slideIndices[postIndex]].style.display = "block"; // Display current slide
+    x[slideIndices[postIndex]].style.display = "block";
   }
-  // Fetch the sneaker posts from the server
+
   fetch(`http://18.232.147.203:3300/sneakerpostsBySeller/${sellerId}`)
     .then(response => response.json())
     .then(posts => {
-      // Loop through each post
+
       posts.forEach((post, postIndex) => {
         let username = '';
-        // Fetch the username for the seller ID
+
         fetch(`http://18.232.147.203:3300/GetSellerUsername/${post.sellerid}`)
           .then(response => response.json())
           .then(seller => {
             username = seller[0].userName;
           })
           .then(() => {
-            // Initialize slide index for this post
             slideIndices[postIndex] = 0;
 
-            // Create a new listing container
             const listingContainer = document.createElement('div');
             listingContainer.className = 'row my-3 py-3';
 
-            // Add the HTML for the listing
             listingContainer.innerHTML = `
               <div id="listing-main-container" class="col">
                 <div id="listing-title-container">
@@ -907,7 +877,6 @@ if (targetSellerId == null || targetSellerId == sellerId) {
                 <a id="listing-like" href="#"><span class="glyphicon glyphicon-heart"></span></a>
               </div>`;
 
-            // Add the new listing container to the listings container
             listings.appendChild(listingContainer);
 
             document.getElementById(`listing-delete-${post.postid}`).addEventListener('click', function () {
@@ -926,7 +895,6 @@ if (targetSellerId == null || targetSellerId == sellerId) {
               });
             });
 
-            // Show the first slide
             showDivs(slideIndices[postIndex], postIndex);
           })
           .catch(error => console.error('Error:', error));
@@ -934,47 +902,42 @@ if (targetSellerId == null || targetSellerId == sellerId) {
     })
     .catch(error => console.error('Error:', error));
 } else {
-  // Initialize an array to store the slideIndex for each post
   let slideIndices = [];
 
-  // Increment the slideIndex by n and display the new slide
   function plusDivs(n, postIndex) {
     showDivs(slideIndices[postIndex] += n, postIndex);
   }
 
-  // Display the slide at slideIndex and hide all other slides
   function showDivs(n, postIndex) {
     var i;
-    var x = document.getElementsByClassName(`mySlides${postIndex}`); // Get all slides for this post
+    var x = document.getElementsByClassName(`mySlides${postIndex}`);
     if (n >= x.length) { slideIndices[postIndex] = 0 }
     if (n < 0) { slideIndices[postIndex] = x.length - 1 }
     for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; // Hide all slides
+      x[i].style.display = "none"; 
     }
-    x[slideIndices[postIndex]].style.display = "block"; // Display current slide
+    x[slideIndices[postIndex]].style.display = "block"; 
   }
-  // Fetch the sneaker posts from the server
+ 
   fetch(`http://18.232.147.203:3300/sneakerpostsBySeller/${targetSellerId}`)
     .then(response => response.json())
     .then(posts => {
-      // Loop through each post
+
       posts.forEach((post, postIndex) => {
         let username = '';
-        // Fetch the username for the seller ID
+      
         fetch(`http://18.232.147.203:3300/GetSellerUsername/${post.sellerid}`)
           .then(response => response.json())
           .then(seller => {
             username = seller[0].userName;
           })
           .then(() => {
-            // Initialize slide index for this post
+           
             slideIndices[postIndex] = 0;
 
-            // Create a new listing container
             const listingContainer = document.createElement('div');
             listingContainer.className = 'row my-3 py-3';
 
-            // Add the HTML for the listing
             listingContainer.innerHTML = `
             <div id="listing-main-container" class="col">
               <div id="listing-title-container">
@@ -1003,10 +966,8 @@ if (targetSellerId == null || targetSellerId == sellerId) {
               <a id="listing-like" href="#"><span class="glyphicon glyphicon-heart"></span></a>
             </div>`;
 
-            // Add the new listing container to the listings container
             listings.appendChild(listingContainer);
 
-            // Show the first slide
             showDivs(slideIndices[postIndex], postIndex);
 
           })
