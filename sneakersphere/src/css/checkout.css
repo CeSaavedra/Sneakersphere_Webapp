@@ -1,194 +1,193 @@
-    /* This is for the entire user profile card-------------------------- */
-    .wrapper{
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 1275px;
-        height: 916px;
-        display: flex;
-        box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
-      }
+/* Implements Imported Font */
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  #content {
+    margin-top: 10em;
+    background-color:rgb(41, 38, 38);
+  }
+  /* ---------- Navbar Header Elements ---------- */
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #0d0d0d;
+    height: 10em;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  .navbar-brand img {
+    /* SneakerSphere Logo* */
+    height: 750%;
+    width: auto;
+    transform: translateY(-15%);
+  }
+  
+  #search-bar {
+    transform: translateY(40%);
+    width: 225%;
+    height: 4em;
+  }
+  
+  #brand-title {
+    /* SneakerSphere Title */
+    font-size: 600%;
+    font-family: 'Bebas Neue';
+    font-stretch: ultra-expanded;
+    color: #cfcfcf;
+    padding-right: 1em;
+    transform: translateY(70%);
+  }
+  
+  #brand-title:hover {
+    text-shadow: 3px 3px 3px #424242;
+  }
+  
+  #login-btn {
+    /* Login Button */
+    font-size: 2em;
+    transform: translateY(40%);
+    color: #cfcfcf;
+    background-color: transparent;
+  }
+  
+  #login-btn:hover {
+    text-shadow: 3px 3px 3px #424242;
+  }
+  
+  /* --------- Elements of the Side Columns ---------- */
+  .sidenav {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: #141414;
+  }
+  
+  /* ---------- Elements of the Center Column ---------- */
+  #content-col {
+      position: relative;
+      height:100vh;
+      min-height: 100vh;
+      background-color: #434343;
+      padding: 0 0 0 0;
+    
+    }
+  
+    h4{
+   margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 50px;
+      color:white;
+    }
+  
+     h5{
+      color: #000000;
+      margin-bottom: 15px;
+      font-size: 30px;
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  
+     h6{
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 5px solid #ff0000;
+      color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 50px;
+  }
+  
+    #left-column-container img {
+      height:20%;
+      width: 50%;
+    }
+  
+    p{
+      font-size: 30px;
+      margin-top: 10px;
+      color: #7a7777;
+    }
+  
+    p2{
+      font-size: 30px;
+      margin-top: 10px;
+      color: #ffffff;
+    }
+  
+    #checkout-container{
+      display:flex;
+      height:100%;
+      width:100%;
+      background-color:rgb(255, 255, 255);
+    }
+    #left-column-container{
+      height:100%;
+      width:30%;
+      left:0;
+      display:flex;
+      flex-direction:column;
+      background-color:black;
+      align-items:center;
+      justify-content: center;
+    }
+    #right-column-container{
+      height:100%;
+      width:70%;
+      background-color:green;
+      display:flex;
+      flex-direction:column;
+    }
+  
+    #checkout-title-container{
+      background-color:rgb(255, 255, 255);
+      height:25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #checkout-listings-container{
+      background-color:rgb(255, 255, 255);
+      height:50%;
+      display: flex;
+      flex-direction: column;
+      align-items:center ;
+    }
+  
+    input{
+      width: 80%;
+    }
+  
+    #checkout-footer-container{
+      background-color:White;
+      height:25%;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+    
+    .column {
+      float: left;
+      width: 45%;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: flex;
+      clear: both;
+      justify-content: space-between;
       
-      /* left side of profile card --------*/
-      .wrapper .left{
-        width: 35%;
-        background: #000000;
-        padding: 30px 25px;
-        text-align: center;
-        color: #ffffff;
-      }
-      
-      /* account name */
-      .wrapper .left h4{
-        margin-bottom: 10px;
-        margin-top: 10px;
-        font-size: 50px;
-      }
-      
-      /* account label: buyer or seller  */
-      .wrapper .left p{
-        font-size: 30px;
-        margin-top: 10px;
-        color: #7a7777;
-      }
-      /*right side of profile card ------- */
-      .wrapper .right{
-        width: 65%;
-        background: #ffffff;
-        padding: 30px 25px;
-     
-      }
-      
-      /* Information title */
-      .wrapper .right .info h3{
-          margin-bottom: 15px;
-          padding-bottom: 5px;
-          border-bottom: 5px solid #ff0000;
-          color: #000000;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 50px;
-        
-      }
-      
-    /* seperates the text underneath into two seperate columns */
-      .wrapper .right .info_data{
-        display: flex;
-        justify-content: space-between;
-      }
-    
-      .wrapper .right .info_data .data{
-        width: 45%;
-      }
-      
-      /* for sections like "firstname and Lastname" */
-      .wrapper .right .info_data .data h4{
-        color: #000000;
-        margin-bottom: 15px;
-        font-size: 30px;
-        font-family: "Bebas Neue", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      
-      /* text within sections "test" and "buyer" */
-      .wrapper .right .info_data .data p{
-        font-size: 20px;
-        margin-bottom: 10px;
-        color: #ff0000;
-        font-family: "Bebas Neue", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      
-        /* Edit profile button */
-        .wrapper .right .edit_profile .edit{
-            font-size: 20px;
-            margin-top: 175px;
-            margin-left: 565px;
-            color: #0000EE;
-          }
-    
-    
-    /* Implements Imported Font */
-    .bebas-neue-regular {
-        font-family: "Bebas Neue", sans-serif;
-        font-weight: 400;
-        font-style: normal;
     }
-    
-    /* ---------- Navbar Header Elements ---------- */
-    .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
-        background-color: #0d0d0d;
-        height: 10em;
-    }
-    .navbar-brand img{ /* SneakerSphere Logo */
-        height: 750%;
-        width:auto;
-        transform: translateY(-15%);
-    }
-    #search-bar{
-        transform: translateY(40%);
-        width:225%;
-        height: 4em;
-    }
-    #brand-title{   /* SneakerSphere Title */
-        font-size: 600%;
-        font-family: 'Bebas Neue';
-        font-stretch: ultra-expanded;
-        color: #cfcfcf;
-        padding-right: 1em;
-        transform: translateY(70%);
-    }
-    #brand-title:hover{
-        text-shadow: 3px 3px 3px #424242;
-    }
-    
-    #login-btn{ /* Login Button */
-        font-size:2em;
-        transform: translateY(40%);
-        color:#cfcfcf;
-        background-color: transparent;
-    }
-    
-    #login-btn:hover {
-        text-shadow: 3px 3px 3px #424242;
-    }
-    
-    /* --------- Elements of the Side Columns ---------- */
-    .sidenav {
-        min-height: 100vh;
-        background-color: #141414;
-    }
-    
-    /* ---------- Elements of the Center Column ---------- */
-    #content-col {
-        min-height: 100vh;
-        background-color: #434343;
-    }
-    
-    /* ---------- Responsive Adaptations for Resolutions ---------- */
-    
-    /* Adapt to Minimal Screens */
-    @media screen and (max-width: 575px) { 
-        #search-bar{
-            width:10px;
-        }
-        #brand-title{
-            font-size: 100%;
-            font-stretch: ultra-condensed;
-            padding-right: 0%;
-            
-        }
-        .navbar-brand img{ /* SneakerSphere Logo */
-            display:none;
-        }
-    }
-    
-    /* Adapt to Mobile Devices */
-    @media screen and (min-width: 576px) and (max-width: 768px) { 
-    
-    }
-    
-    /* test stuff*/
-    
-    /* Adapt to Tablets */
-    @media screen and (min-width: 768px) and (max-width: 991px){ 
-        #search-bar{
-            width:100%;
-        }
-        #brand-title{
-            font-size: 400%;
-            font-stretch: ultra-condensed;
-            padding-right: 0%;
-        }
-        .navbar-brand img{ /* SneakerSphere Logo */
-            height: 550%;
-            width:auto;
-            transform: translateY(-8%);
-        }
-    }
-
+  
+  
+  
+   
