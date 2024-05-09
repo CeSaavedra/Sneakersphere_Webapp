@@ -1,0 +1,186 @@
+/* Implements Imported Font */
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  #content {
+    margin-top: 10em;
+    background-color:rgb(41, 38, 38);
+  }
+  /* ---------- Navbar Header Elements ---------- */
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #0d0d0d;
+    height: 10em;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  .navbar-brand img {
+    /* SneakerSphere Logo* */
+    height: 750%;
+    width: auto;
+    transform: translateY(-15%);
+  }
+  
+  #search-bar {
+    transform: translateY(40%);
+    width: 225%;
+    height: 4em;
+  }
+  
+  #brand-title {
+    /* SneakerSphere Title */
+    font-size: 600%;
+    font-family: 'Bebas Neue';
+    font-stretch: ultra-expanded;
+    color: #cfcfcf;
+    padding-right: 1em;
+    transform: translateY(70%);
+  }
+  
+  #brand-title:hover {
+    text-shadow: 3px 3px 3px #424242;
+  }
+  
+  #login-btn {
+    /* Login Button */
+    font-size: 2em;
+    transform: translateY(40%);
+    color: #cfcfcf;
+    background-color: transparent;
+  }
+  
+  #login-btn:hover {
+    text-shadow: 3px 3px 3px #424242;
+  }
+  
+  /* --------- Elements of the Side Columns ---------- */
+  .sidenav {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: #141414;
+  }
+  
+  /* ---------- Elements of the Center Column ---------- */
+  #content-col {
+      position: relative;
+      height:100vh;
+      min-height: 100vh;
+      background-color: #434343;
+      padding: 0 0 0 0;
+    
+    }
+  
+    h4{
+   margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 50px;
+      color:white;
+    }
+  
+     h5{
+      color: #000000;
+      margin-bottom: 15px;
+      font-size: 30px;
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  
+     h6{
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 5px solid #ff0000;
+      color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 50px;
+  }
+  
+    #left-column-container img {
+      height:15em;
+      width: 15em;
+    }
+    p{
+      font-size: 30px;
+      margin-top: 10px;
+      color: #7a7777;
+    }
+
+    p2{
+        font-size: 30px;
+        margin-top: 10px;
+        color: #ffffff;
+      }
+  
+    #checkout-container{
+      display:flex;
+      height:100%;
+      width:100%;
+      background-color:rgb(255, 255, 255);
+    }
+    #left-column-container{
+      height:100%;
+      width:30%;
+      left:0;
+      display:flex;
+      flex-direction:column;
+      background-color:black;
+      align-items:center;
+      justify-content: center;
+    }
+    #right-column-container{
+      height:100%;
+      width:70%;
+      background-color:green;
+      display:flex;
+      flex-direction:column;
+    }
+  
+    #checkout-title-container{
+      background-color:rgb(255, 255, 255);
+      height:25%;
+      display: flex;
+      align-items: center;
+    }
+  
+    #checkout-listings-container{
+      background-color:rgb(255, 255, 255);
+      height:50%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    #checkout-footer-container{
+      background-color:White;
+      height:25%;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+    
+    .column {
+      float: left;
+      width: 45%;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: flex;
+      clear: both;
+      justify-content: space-between;
+      
+    }
+  
+  
+  
+   
